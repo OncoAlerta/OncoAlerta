@@ -1021,6 +1021,9 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
 #s-meds:checked~.sroot .v-meds{display:block}
 #s-medform:checked~.sroot .v-medform{display:block}
 #s-meds-ok:checked~.sroot .v-meds-ok{display:block}
+#s-registro-confirm:checked~.sroot .v-registro-confirm{display:block}
+#s-nueva-clave:checked~.sroot .v-nueva-clave{display:block}
+body.booting .sroot{visibility:hidden}
 #s-perfil:checked~.sroot .v-perfil{display:block}
 #s-staff-panel:checked~.sroot .v-staff-panel{display:block}
 #s-staff-pacientes:checked~.sroot .v-staff-pacientes{display:block}
@@ -1051,8 +1054,9 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
 #rt-energia:checked~.seg label[for="rt-energia"],#ht-energia:checked~.seg label[for="ht-energia"]{background:var(--raised);color:var(--ink);font-weight:700;box-shadow:0 1px 3px rgb(0 0 0/.12)}
 </style>
 </head>
-<body class="static">
-<input type="radio" name="nav" class="nav-r" id="s-bienvenida" checked aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-login" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-home" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-sent" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-recom" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-historial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-mensajes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-medform" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-perfil" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-panel" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-pacientes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-alertas" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-reportes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro1" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro2" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro3" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial-ok" aria-hidden="true" tabindex="-1">
+<body class="static booting">
+<noscript><div class="nojs"><div><b>OncoAlerta necesita JavaScript</b><p>Activa JavaScript en tu navegador para iniciar sesión.</p></div></div></noscript>
+<input type="radio" name="nav" class="nav-r" id="s-bienvenida" checked aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-login" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-home" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-sent" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-recom" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-historial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-mensajes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-medform" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-perfil" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-panel" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-pacientes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-alertas" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-reportes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro1" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro2" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro3" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-nueva-clave" aria-hidden="true" tabindex="-1">
 <div class="sroot"><div class="solo"><div class="device"><div class="device-screen"><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 17 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12" style="width:25px"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.6"/></svg></span></div><div class="app">
 <div class="scr v-bienvenida"><div class="app-screen full"><div class="welcome">
       <div class="welcome-art"><svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustración: una paciente con pañoleta y su acompañante, sentadas frente a la ventana de una habitación de hospital tranquila al amanecer.">
@@ -1117,7 +1121,7 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
           <label class="btn block go" for="s-home">Entrar</label>
         </div>
         <div class="divider"><span>¿Trabajas en el equipo de salud?</span></div>
-        <label class="btn ghost block go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v6a5 5 0 0 0 10 0V3"></path><path d="M10 14v2a5 5 0 0 0 10 0v-3"></path><circle cx="20" cy="11" r="2"></circle></svg> Soy personal de salud</label>
+        <p class="center-note" style="margin-top:0">Entra con el correo y la contraseña que te dio tu unidad.</p>
         <p class="center-note">¿No tienes cuenta? <label class="linkbtn go" for="s-registro1">Registrarse</label></p>
       </div></div></div>
 <div class="scr v-forgot"><div class="app-screen"><header class="app-head"><label class="iconbtn go" aria-label="Volver" for="s-bienvenida"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Iniciar sesión</h1></header>
@@ -1130,7 +1134,7 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
           <label class="btn block go" for="s-home">Entrar</label>
         </div>
         <div class="divider"><span>¿Trabajas en el equipo de salud?</span></div>
-        <label class="btn ghost block go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v6a5 5 0 0 0 10 0V3"></path><path d="M10 14v2a5 5 0 0 0 10 0v-3"></path><circle cx="20" cy="11" r="2"></circle></svg> Soy personal de salud</label>
+        <p class="center-note" style="margin-top:0">Entra con el correo y la contraseña que te dio tu unidad.</p>
         <p class="center-note">¿No tienes cuenta? <label class="linkbtn go" for="s-registro1">Registrarse</label></p>
       </div></div><div class="layer on"><label class="scrim go" for="s-login"></label><div class="sheet " role="dialog" aria-modal="true" aria-label="Recuperar contraseña" tabindex="-1"><div class="grab" aria-hidden="true"></div><h2>Recuperar contraseña</h2><p class="lead">Escribe el correo con el que te registraste y te enviaremos un enlace para crear una nueva contraseña.</p>
         <div class="form" id="forgot-fgBox"><div class="field" data-req="Correo electrónico"><label for="forgot-fgMail">Correo electrónico</label><input class="input" id="forgot-fgMail" type="email" inputmode="email"><span class="err">Este dato es obligatorio.</span></div><label class="btn block go" for="s-forgot-ok">Enviar enlace</label></div></div></div></div>
@@ -1144,7 +1148,7 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
           <label class="btn block go" for="s-home">Entrar</label>
         </div>
         <div class="divider"><span>¿Trabajas en el equipo de salud?</span></div>
-        <label class="btn ghost block go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v6a5 5 0 0 0 10 0V3"></path><path d="M10 14v2a5 5 0 0 0 10 0v-3"></path><circle cx="20" cy="11" r="2"></circle></svg> Soy personal de salud</label>
+        <p class="center-note" style="margin-top:0">Entra con el correo y la contraseña que te dio tu unidad.</p>
         <p class="center-note">¿No tienes cuenta? <label class="linkbtn go" for="s-registro1">Registrarse</label></p>
       </div></div><div class="layer on"><label class="scrim go" for="s-login"></label><div class="sheet " role="dialog" aria-modal="true" aria-label="Recuperar contraseña" tabindex="-1"><div class="grab" aria-hidden="true"></div><h2>Recuperar contraseña</h2><p class="lead">Escribe el correo con el que te registraste y te enviaremos un enlace para crear una nueva contraseña.</p>
         <div class="form" id="forgot-ok-fgBox"><div class="result"><div class="badge"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div><h2>Revisa tu correo</h2><p>Si tu correo está registrado, recibirás el enlace en unos minutos.</p><label class="btn block go" for="s-login">Entendido</label></div></div></div></div></div>
@@ -1350,7 +1354,7 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
           <div class="field" data-req="Sexo"><span class="lbl">Sexo</span><div class="chips" data-chips="sexo" data-multi="0" role="radiogroup" aria-label="Sexo"><input type="radio" class="ci" name="registro2-c0" id="registro2-c0-0"><label class="chip" for="registro2-c0-0">Mujer</label><input type="radio" class="ci" name="registro2-c0" id="registro2-c0-1"><label class="chip" for="registro2-c0-1">Hombre</label><input type="radio" class="ci" name="registro2-c0" id="registro2-c0-2"><label class="chip" for="registro2-c0-2">Otro</label></div><span class="err">Elige una opción.</span></div>
           <div class="field" data-req="Correo electrónico (nuevamente)"><label for="registro2-r2Mail">Correo electrónico (nuevamente)</label><input class="input" id="registro2-r2Mail" type="email" inputmode="email"><span class="help">Para confirmar que lo escribiste bien.</span><span class="err">Este dato es obligatorio.</span></div>
           <div class="field" data-req="CURP"><label for="registro2-r2Curp">CURP</label><input class="input" id="registro2-r2Curp" type="text" maxlength="18" autocapitalize="characters" spellcheck="false"><span class="help">18 caracteres, como aparece en tu documento.</span><span class="err">Este dato es obligatorio.</span></div>
-          <div class="field" data-req="Hospital"><label for="registro2-r2Hosp">Hospital</label><input class="input" id="registro2-r2Hosp" type="text" placeholder="Hospital donde te atienden"><span class="err">Este dato es obligatorio.</span></div>
+          <div class="field" data-req="Hospital"><label for="registro2-r2Hosp">Hospital</label><select class="select" id="registro2-r2Hosp"><option value="">Selecciona tu hospital</option></select><span class="err">Este dato es obligatorio.</span></div>
           <div class="field" data-req="Número de expediente"><label for="registro2-r2Exp">Número de expediente</label><input class="input" id="registro2-r2Exp" type="text" inputmode="numeric"><span class="err">Este dato es obligatorio.</span></div>
           <div class="row2"><div class="field" data-req="Contacto de emergencia"><label for="registro2-r2EmN">Contacto de emergencia</label><input class="input" id="registro2-r2EmN" type="text" placeholder="Nombre"><span class="err">Este dato es obligatorio.</span></div><div class="field" data-req="Teléfono del contacto"><label for="registro2-r2EmT">Teléfono del contacto</label><input class="input" id="registro2-r2EmT" type="tel" inputmode="tel"><span class="err">Este dato es obligatorio.</span></div></div>
           <div class="field"><label for="registro2-r2EmR">Parentesco <span class="optional">(opcional)</span></label><input class="input" id="registro2-r2EmR" type="text" placeholder="Ej. hermana, hijo"><span class="err">Este dato es obligatorio.</span></div>
@@ -1373,7 +1377,7 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
       </div>
       <footer class="app-foot"><label class="btn block go" for="s-tz-inicial">Guardar perfil</label></footer></div></div>
 <div class="scr v-tz-inicial"><div class="app-screen"><header class="app-head"><h1>Tamizaje inicial</h1></header>
-      <div class="app-body"><div class="stepinfo">Paso 4 de 4 · Tamizaje inicial</div><div class="stepper" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      <div class="app-body"><div class="errband" role="alert"></div><div class="stepinfo">Paso 4 de 4 · Tamizaje inicial</div><div class="stepper" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
         <p class="intro">Responde del 1 al 10 según cómo te has sentido desde tu diagnóstico. No hay respuestas correctas o incorrectas.</p>
         <div class="form"><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>Ansiedad</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-1"><label class="nr-l" for="tz-inicial-r0-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-2"><label class="nr-l" for="tz-inicial-r0-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-3"><label class="nr-l" for="tz-inicial-r0-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-4"><label class="nr-l" for="tz-inicial-r0-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-5"><label class="nr-l" for="tz-inicial-r0-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-6"><label class="nr-l" for="tz-inicial-r0-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-7"><label class="nr-l" for="tz-inicial-r0-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-8"><label class="nr-l" for="tz-inicial-r0-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-9"><label class="nr-l" for="tz-inicial-r0-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r0" id="tz-inicial-r0-10"><label class="nr-l" for="tz-inicial-r0-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"></path><path d="M16 14v6M8 14v6M12 16v6"></path></svg>Tristeza</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-1"><label class="nr-l" for="tz-inicial-r1-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-2"><label class="nr-l" for="tz-inicial-r1-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-3"><label class="nr-l" for="tz-inicial-r1-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-4"><label class="nr-l" for="tz-inicial-r1-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-5"><label class="nr-l" for="tz-inicial-r1-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-6"><label class="nr-l" for="tz-inicial-r1-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-7"><label class="nr-l" for="tz-inicial-r1-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-8"><label class="nr-l" for="tz-inicial-r1-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-9"><label class="nr-l" for="tz-inicial-r1-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r1" id="tz-inicial-r1-10"><label class="nr-l" for="tz-inicial-r1-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>Sueño</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-1"><label class="nr-l" for="tz-inicial-r2-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-2"><label class="nr-l" for="tz-inicial-r2-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-3"><label class="nr-l" for="tz-inicial-r2-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-4"><label class="nr-l" for="tz-inicial-r2-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-5"><label class="nr-l" for="tz-inicial-r2-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-6"><label class="nr-l" for="tz-inicial-r2-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-7"><label class="nr-l" for="tz-inicial-r2-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-8"><label class="nr-l" for="tz-inicial-r2-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-9"><label class="nr-l" for="tz-inicial-r2-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r2" id="tz-inicial-r2-10"><label class="nr-l" for="tz-inicial-r2-10">10</label></div><div class="ruler-ends"><span>1 · Muy mal</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>Alimentación</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-1"><label class="nr-l" for="tz-inicial-r3-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-2"><label class="nr-l" for="tz-inicial-r3-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-3"><label class="nr-l" for="tz-inicial-r3-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-4"><label class="nr-l" for="tz-inicial-r3-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-5"><label class="nr-l" for="tz-inicial-r3-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-6"><label class="nr-l" for="tz-inicial-r3-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-7"><label class="nr-l" for="tz-inicial-r3-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-8"><label class="nr-l" for="tz-inicial-r3-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-9"><label class="nr-l" for="tz-inicial-r3-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r3" id="tz-inicial-r3-10"><label class="nr-l" for="tz-inicial-r3-10">10</label></div><div class="ruler-ends"><span>1 · Casi no comí</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.3 1.6 1.3 2.8 2.5 2.8Z"></path></svg>Dolor</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-1"><label class="nr-l" for="tz-inicial-r4-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-2"><label class="nr-l" for="tz-inicial-r4-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-3"><label class="nr-l" for="tz-inicial-r4-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-4"><label class="nr-l" for="tz-inicial-r4-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-5"><label class="nr-l" for="tz-inicial-r4-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-6"><label class="nr-l" for="tz-inicial-r4-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-7"><label class="nr-l" for="tz-inicial-r4-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-8"><label class="nr-l" for="tz-inicial-r4-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-9"><label class="nr-l" for="tz-inicial-r4-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r4" id="tz-inicial-r4-10"><label class="nr-l" for="tz-inicial-r4-10">10</label></div><div class="ruler-ends"><span>1 · Casi nada</span><span>El peor · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>Energía</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-1"><label class="nr-l" for="tz-inicial-r5-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-2"><label class="nr-l" for="tz-inicial-r5-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-3"><label class="nr-l" for="tz-inicial-r5-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-4"><label class="nr-l" for="tz-inicial-r5-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-5"><label class="nr-l" for="tz-inicial-r5-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-6"><label class="nr-l" for="tz-inicial-r5-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-7"><label class="nr-l" for="tz-inicial-r5-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-8"><label class="nr-l" for="tz-inicial-r5-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-9"><label class="nr-l" for="tz-inicial-r5-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r5" id="tz-inicial-r5-10"><label class="nr-l" for="tz-inicial-r5-10">10</label></div><div class="ruler-ends"><span>1 · Agotado/a</span><span>Mucha energía · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg>Apoyo emocional</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-1"><label class="nr-l" for="tz-inicial-r6-1">1</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-2"><label class="nr-l" for="tz-inicial-r6-2">2</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-3"><label class="nr-l" for="tz-inicial-r6-3">3</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-4"><label class="nr-l" for="tz-inicial-r6-4">4</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-5"><label class="nr-l" for="tz-inicial-r6-5">5</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-6"><label class="nr-l" for="tz-inicial-r6-6">6</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-7"><label class="nr-l" for="tz-inicial-r6-7">7</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-8"><label class="nr-l" for="tz-inicial-r6-8">8</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-9"><label class="nr-l" for="tz-inicial-r6-9">9</label><input type="radio" class="nr-i" name="tz-inicial-r6" id="tz-inicial-r6-10"><label class="nr-l" for="tz-inicial-r6-10">10</label></div><div class="ruler-ends"><span>1 · Me siento solo/a</span><span>Muy acompañado/a · 10</span></div></div></div>
       </div>
@@ -1386,6 +1390,511 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
         
       </div>
       <footer class="app-foot"><div class="btnrow"><label class="btn go" for="s-home">Ir al inicio</label></div></footer></div></div>
+<div class="scr v-registro-confirm"><div class="app-screen"><header class="app-head"><h1>Confirma tu correo</h1></header>
+      <div class="app-body"><div class="errband" role="alert"></div>
+        <div class="result"><div class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></div>
+          <h2>Revisa tu correo</h2><p>Te enviamos un enlace a <b id="rc-mail"></b>. Ábrelo para confirmar tu cuenta y continuar con tu registro.</p><p class="muted small">Si no lo ves, revisa la carpeta de correo no deseado.</p></div>
+      </div>
+      <footer class="app-foot"><label class="btn block go" for="s-login">Ya confirmé, iniciar sesión</label></footer></div></div>
+<div class="scr v-nueva-clave"><div class="app-screen"><header class="app-head"><h1>Nueva contraseña</h1></header>
+      <div class="app-body"><div class="errband" role="alert"></div>
+        <p class="intro">Escribe tu nueva contraseña. La usarás para iniciar sesión.</p>
+        <div class="form">
+          <div class="field" data-req="Nueva contraseña"><label for="nc-pass">Nueva contraseña</label><input class="input" id="nc-pass" type="password" autocomplete="new-password"><span class="help">Mínimo 8 caracteres.</span><span class="err">Este dato es obligatorio.</span></div>
+          <div class="field" data-req="Confirmar contraseña"><label for="nc-pass2">Confirmar contraseña</label><input class="input" id="nc-pass2" type="password" autocomplete="new-password"><span class="err">Este dato es obligatorio.</span></div>
+        </div>
+      </div>
+      <footer class="app-foot"><label class="btn block go" id="nc-save" for="s-home">Guardar contraseña</label></footer></div></div>
 </div></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* =============================================================================
+   OncoAlerta · Connexion obligatoire (Supabase Auth)
+   - Sans session : seuls l'accueil, la connexion, l'inscription et
+     « mot de passe oublié » sont accessibles.
+   - Patient : termine d'abord son inscription (étapes 2 → 4), puis accède à l'app.
+   - Personnel : accède uniquement au panel du personnel.
+   Les données restent protégées côté base par les règles RLS de la migration.
+   ============================================================================= */
+(() => {
+  'use strict';
+
+  // ── À REMPLIR : Supabase → Project Settings → API ──────────────────────────
+  const SUPABASE_URL = 'https://VOTRE-PROJET.supabase.co';
+  const SUPABASE_KEY = 'VOTRE_CLE_PUBLISHABLE';
+  // ───────────────────────────────────────────────────────────────────────────
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+  const appEl = $('.app');
+
+  const PUBLIC = ['bienvenida', 'login', 'forgot', 'forgot-ok', 'registro1', 'registro-confirm'];
+  const STAFF = ['staff-panel', 'staff-pacientes', 'staff-alertas', 'staff-reportes'];
+  const REGISTRATION = {
+    datos: ['registro2'],
+    perfil: ['registro2', 'registro3'],
+    tamizaje: ['registro3', 'tz-inicial'],
+  };
+  const NOT_PATIENT_APP = new Set([...PUBLIC, ...STAFF, 'registro2', 'registro3', 'tz-inicial', 'nueva-clave']);
+  const PATIENT_APP = $$('input.nav-r').map((r) => r.id.slice(2)).filter((s) => !NOT_PATIENT_APP.has(s));
+  const FIRST_SCREEN = { datos: 'registro2', perfil: 'registro3', tamizaje: 'tz-inicial', completo: 'home' };
+  const DISCIPLINAS = {
+    oncologia_medica: 'Oncología médica', enfermeria: 'Enfermería', psicooncologia: 'Psicooncología',
+    nutricion: 'Nutrición', fisioterapia: 'Fisioterapia', trabajo_social: 'Trabajo social', otra: 'Personal de salud',
+  };
+
+  let sb = null;
+  let setupProblem = null;
+  let state = { user: null, role: null, step: null, recovery: false };
+
+  // ── Navigation protégée ─────────────────────────────────────────────────────
+  function allowedScreens() {
+    if (state.recovery) return ['nueva-clave'];
+    if (!state.user) return PUBLIC;
+    if (state.role === 'staff') return STAFF;
+    if (state.step === 'completo') return PATIENT_APP;
+    return REGISTRATION[state.step] || ['registro2'];
+  }
+
+  function homeScreen() {
+    if (state.recovery) return 'nueva-clave';
+    if (!state.user) return 'bienvenida';
+    if (state.role === 'staff') return 'staff-panel';
+    return FIRST_SCREEN[state.step] || 'registro2';
+  }
+
+  function current() {
+    const r = $('input.nav-r:checked');
+    return r ? r.id.slice(2) : 'bienvenida';
+  }
+
+  function go(screen) {
+    if (!allowedScreens().includes(screen)) screen = homeScreen();
+    clearErrors();
+    const radio = document.getElementById('s-' + screen);
+    if (radio) radio.checked = true;
+    $$(`.scr.v-${screen} .app-body, .scr.v-${screen} .s-body`).forEach((el) => { el.scrollTop = 0; });
+    onEnter(screen).catch((e) => console.error(e));
+  }
+
+  // ── Messages d'erreur (bande rouge de la maquette) ──────────────────────────
+  function showError(title, items = [], fields = []) {
+    const band = $(`.scr.v-${current()} .errband`);
+    if (band) {
+      band.innerHTML = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3Z"></path><path d="M12 9v4M12 17h.01"></path></svg><div><b></b><ul></ul></div>';
+      band.querySelector('b').textContent = title;
+      const ul = band.querySelector('ul');
+      items.forEach((t) => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      const body = band.closest('.app-body, .s-body');
+      if (body) body.scrollTop = 0;
+    }
+    fields.forEach((f) => f && f.classList.add('bad'));
+    appEl.classList.add('is-error');
+  }
+
+  function clearErrors() {
+    appEl.classList.remove('is-error');
+    $$('.field.bad').forEach((f) => f.classList.remove('bad'));
+  }
+
+  function fieldOf(id) {
+    return document.getElementById(id)?.closest('.field');
+  }
+
+  function isFilled(field) {
+    const chips = field.querySelector('.chips');
+    if (chips) return Boolean(chips.querySelector('input:checked'));
+    const control = field.querySelector('.input, .select, .textarea');
+    if (control) return control.value.trim() !== '';
+    const box = field.querySelector('input[type=checkbox]');
+    return box ? box.checked : true;
+  }
+
+  /** Vérifie les champs obligatoires (data-req) d'un écran. Renvoie la liste des manquants. */
+  function missingFields(root) {
+    const missing = [];
+    $$('.field[data-req]', root).forEach((f) => {
+      if (!isFilled(f)) { f.classList.add('bad'); missing.push(f.dataset.req); }
+    });
+    if (missing.length) appEl.classList.add('is-error');
+    return missing;
+  }
+
+  function chipValues(root, name) {
+    return $$(`[data-chips="${name}"] input:checked`, root)
+      .map((i) => $(`label[for="${i.id}"]`).textContent.trim());
+  }
+
+  function authMessage(error) {
+    const code = error.code || '';
+    const msg = error.message || '';
+    if (code === 'invalid_credentials' || /invalid login/i.test(msg)) return 'El correo o la contraseña no son correctos.';
+    if (code === 'email_not_confirmed' || /not confirmed/i.test(msg)) return 'Confirma tu correo con el enlace que te enviamos antes de entrar.';
+    if (code === 'user_already_exists' || /already registered/i.test(msg)) return 'Ya existe una cuenta con este correo. Inicia sesión.';
+    if (code === 'weak_password' || /password/i.test(msg) && /at least|weak/i.test(msg)) return 'La contraseña es demasiado débil. Usa al menos 8 caracteres.';
+    if (code === 'email_address_invalid' || /invalid.*email|email.*invalid/i.test(msg)) return 'El correo no es válido.';
+    if (/rate limit|too many/i.test(code + msg)) return 'Demasiados intentos. Espera unos minutos y vuelve a intentarlo.';
+    if (/fetch|network/i.test(msg)) return 'No se pudo conectar. Revisa tu conexión a internet.';
+    return 'Ocurrió un error. Inténtalo de nuevo.';
+  }
+
+  function dbMessage(error) {
+    const msg = `${error.message || ''} ${error.details || ''}`;
+    if (/patients_curp_check/.test(msg)) return 'La CURP no tiene un formato válido.';
+    if (/patients_curp_key/.test(msg)) return 'Esta CURP ya está registrada en otra cuenta.';
+    if (/patients_record_unique/.test(msg)) return 'Este número de expediente ya está registrado en tu hospital.';
+    if (/consentimiento/.test(msg)) return 'Necesitamos tu consentimiento para continuar.';
+    if (/fetch|network/i.test(msg)) return 'No se pudo conectar. Revisa tu conexión a internet.';
+    console.error(error);
+    return 'No pudimos guardar tus datos. Inténtalo de nuevo.';
+  }
+
+  function pageUrl() {
+    return location.href.split('#')[0].split('?')[0];
+  }
+
+  // ── État de la session ──────────────────────────────────────────────────────
+  async function loadState() {
+    const { data: { session } } = await sb.auth.getSession();
+    state.user = session ? session.user : null;
+    state.role = null;
+    state.step = null;
+    if (!state.user) return;
+
+    const { data: profile, error } = await sb.from('profiles')
+      .select('role, full_name').eq('id', state.user.id).maybeSingle();
+    if (error) throw error;
+    if (!profile) throw new Error('profile_missing');
+
+    if (profile.role === 'staff' || profile.role === 'admin') {
+      state.role = 'staff';
+      const { data: staff } = await sb.from('staff')
+        .select('display_name, discipline').eq('id', state.user.id).maybeSingle();
+      fillStaffHeader(staff, profile);
+    } else {
+      state.role = 'patient';
+      const { data: home, error: e2 } = await sb.from('patient_home')
+        .select('registration_step, full_name').maybeSingle();
+      if (e2) throw e2;
+      state.step = home ? home.registration_step : 'datos';
+      state.fullName = home ? home.full_name : profile.full_name;
+    }
+  }
+
+  function fillStaffHeader(staff, profile) {
+    const name = staff?.display_name || profile.full_name || state.user.email;
+    $$('.s-user .who b').forEach((b) => { b.textContent = name; });
+    $$('.s-user .who small').forEach((s) => { s.textContent = DISCIPLINAS[staff?.discipline] || 'Personal de salud'; });
+    const hello = $('.v-staff-panel .s-title h1');
+    if (hello) hello.textContent = `Hola, ${name}`;
+  }
+
+  // ── Contenu chargé à l'arrivée sur un écran ─────────────────────────────────
+  let unitsLoaded = false;
+  async function onEnter(screen) {
+    if (screen === 'home') {
+      const first = (state.fullName || '').trim().split(/\s+/)[0];
+      $('.v-home .p-hello h1').textContent = first ? `Hola, ${first}` : 'Hola';
+    }
+    if (screen === 'registro2' && !unitsLoaded) {
+      const select = $('#registro2-r2Hosp');
+      const { data, error } = await sb.from('units').select('id, name, hospital').order('hospital');
+      if (error) return;
+      unitsLoaded = true;
+      select.innerHTML = '<option value="">Selecciona tu hospital</option>';
+      data.forEach((u) => select.add(new Option(`${u.hospital} · ${u.name}`, u.id)));
+      if (data.length === 1) select.value = data[0].id;
+      if (!data.length) select.options[0].textContent = 'Aún no hay hospitales disponibles';
+    }
+    if (screen === 'perfil') await fillProfile();
+  }
+
+  async function fillProfile() {
+    const { data: p } = await sb.from('patients')
+      .select('*, profiles(full_name, phone, email), units(name, hospital)')
+      .eq('id', state.user.id).maybeSingle();
+    if (!p) return;
+    const scr = $('.scr.v-perfil');
+    $('.p-hello h1', scr).textContent = p.profiles?.full_name || 'Mis datos';
+    $('.p-hello p', scr).textContent = [p.age && `${p.age} años`, p.sex].filter(Boolean).join(' · ');
+    const date = p.diagnosis_date
+      ? new Date(p.diagnosis_date + 'T12:00:00').toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })
+      : null;
+    const values = {
+      'Tipo de cáncer': p.cancer_type,
+      'Etapa': p.cancer_stage,
+      'Tratamiento actual': (p.treatments || []).join(', '),
+      'Fecha de diagnóstico': date,
+      'Médico tratante': p.treating_doctor_name,
+      'Red de apoyo': (p.support_network || []).join(', '),
+      'Teléfono': p.profiles?.phone,
+      'Correo': p.profiles?.email || state.user.email,
+      'CURP': p.curp,
+      'Hospital': p.units ? `${p.units.name} · ${p.units.hospital}` : null,
+      'Expediente': p.record_number,
+      'Contacto de emergencia': p.emergency_name
+        ? `${p.emergency_name}${p.emergency_relationship ? ` (${p.emergency_relationship})` : ''} · ${p.emergency_phone || ''}`
+        : null,
+    };
+    $$('.kv > div', scr).forEach((row) => {
+      const key = $('dt', row).textContent.trim();
+      if (key in values) $('dd', row).textContent = values[key] || '—';
+    });
+  }
+
+  // ── Actions ─────────────────────────────────────────────────────────────────
+  function needSetup() {
+    if (!setupProblem) return false;
+    showError(setupProblem.title, [setupProblem.text]);
+    return true;
+  }
+
+  async function doLogin(btn) {
+    if (needSetup()) return;
+    const scr = btn.closest('.scr');
+    const missing = missingFields($('.form', scr));
+    if (missing.length) return showError('Completa los datos', ['Escribe tu correo y tu contraseña.']);
+    const email = $('input[type=email]', scr).value.trim();
+    const pass = $('input[type=password]', scr);
+    const { error } = await sb.auth.signInWithPassword({ email, password: pass.value });
+    if (error) return showError('No pudimos iniciar sesión', [authMessage(error)]);
+    pass.value = '';
+    await loadState();
+    go(homeScreen());
+  }
+
+  async function doForgot() {
+    if (needSetup()) return;
+    const box = $('#forgot-fgBox');
+    if (missingFields(box).length) return showError('Escribe tu correo', ['Lo necesitamos para enviarte el enlace.']);
+    const email = $('#forgot-fgMail').value.trim();
+    const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: pageUrl() });
+    if (error) return showError('No pudimos enviar el enlace', [authMessage(error)]);
+    go('forgot-ok');
+  }
+
+  async function doSignUp() {
+    if (needSetup()) return;
+    const scr = $('.scr.v-registro1');
+    if (missingFields(scr).length) return showError('Completa los datos', ['Escribe tu correo y tu contraseña dos veces.']);
+    const email = $('#registro1-r1Mail').value.trim();
+    const p1 = $('#registro1-r1Pass');
+    const p2 = $('#registro1-r1Pass2');
+    if (p1.value.length < 8) return showError('Contraseña demasiado corta', ['Usa al menos 8 caracteres.'], [fieldOf('registro1-r1Pass')]);
+    if (p1.value !== p2.value) return showError('Las contraseñas no coinciden', ['Escribe la misma contraseña en los dos campos.'], [fieldOf('registro1-r1Pass2')]);
+
+    const { data, error } = await sb.auth.signUp({ email, password: p1.value, options: { emailRedirectTo: pageUrl() } });
+    if (error) return showError('No pudimos crear tu cuenta', [authMessage(error)]);
+    if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+      return showError('Ya existe una cuenta con este correo', ['Inicia sesión o recupera tu contraseña.']);
+    }
+    p1.value = '';
+    p2.value = '';
+    if (!data.session) {
+      $('#rc-mail').textContent = email;
+      go('registro-confirm');
+      return;
+    }
+    await loadState();
+    go(homeScreen());
+  }
+
+  async function doRegister() {
+    const scr = $('.scr.v-registro2');
+    const missing = missingFields(scr);
+    if (missing.length) return showError('Faltan datos', missing);
+
+    const problems = [];
+    const bad = [];
+    const age = Number($('#registro2-r2Edad').value);
+    if (!Number.isInteger(age) || age < 1 || age > 120) { problems.push('La edad debe ser un número entre 1 y 120.'); bad.push(fieldOf('registro2-r2Edad')); }
+    if ($('#registro2-r2Mail').value.trim().toLowerCase() !== (state.user.email || '').toLowerCase()) {
+      problems.push('El correo debe ser el mismo con el que creaste tu cuenta.'); bad.push(fieldOf('registro2-r2Mail'));
+    }
+    const curp = $('#registro2-r2Curp').value.trim().toUpperCase();
+    if (!/^[A-Z]{4}\d{6}[HMX][A-Z]{5}[A-Z0-9]\d$/.test(curp)) { problems.push('La CURP debe tener 18 caracteres, como aparece en tu documento.'); bad.push(fieldOf('registro2-r2Curp')); }
+    if (problems.length) return showError('Revisa estos datos', problems, bad);
+
+    const { error } = await sb.rpc('register_patient', {
+      p_unit_id: $('#registro2-r2Hosp').value,
+      p_full_name: $('#registro2-r2Nombre').value.trim(),
+      p_phone: $('#registro2-r2Tel').value.trim(),
+      p_age: age,
+      p_sex: chipValues(scr, 'sexo')[0],
+      p_curp: curp,
+      p_record_number: $('#registro2-r2Exp').value.trim(),
+      p_emergency_name: $('#registro2-r2EmN').value.trim(),
+      p_emergency_phone: $('#registro2-r2EmT').value.trim(),
+      p_emergency_relationship: $('#registro2-r2EmR').value.trim() || null,
+      p_consent: $('#registro2-r2Ok').checked,
+    });
+    if (error) return showError('No pudimos guardar tus datos', [dbMessage(error)]);
+    await loadState();
+    go(homeScreen());
+  }
+
+  async function doProfile() {
+    const scr = $('.scr.v-registro3');
+    const missing = missingFields(scr);
+    if (missing.length) return showError('Faltan datos', missing);
+    const date = $('#registro3-r3Fecha').value;
+    if (date > new Date().toISOString().slice(0, 10)) {
+      return showError('Revisa la fecha', ['La fecha de diagnóstico no puede estar en el futuro.'], [fieldOf('registro3-r3Fecha')]);
+    }
+    const { error } = await sb.from('patients').update({
+      cancer_type: $('#registro3-r3Tipo').value,
+      cancer_stage: chipValues(scr, 'etapa')[0],
+      treatments: chipValues(scr, 'trat'),
+      treatment_detail: $('#registro3-r3Det').value.trim() || null,
+      diagnosis_date: date,
+      treating_doctor_name: $('#registro3-r3Med').value.trim(),
+      support_network: chipValues(scr, 'red'),
+    }).eq('id', state.user.id);
+    if (error) return showError('No pudimos guardar tu perfil', [dbMessage(error)]);
+    await loadState();
+    go(homeScreen());
+  }
+
+  async function doInitialScreening() {
+    const keys = ['anxiety', 'sadness', 'sleep', 'eating', 'pain', 'energy', 'support'];
+    const values = { kind: 'inicial' };
+    const missing = [];
+    keys.forEach((key, i) => {
+      const checked = $(`input[name="tz-inicial-r${i}"]:checked`);
+      if (checked) values[key] = Number(checked.id.split('-').pop());
+      else missing.push($(`input[name="tz-inicial-r${i}"]`).closest('.nr').querySelector('.lbl').textContent.trim());
+    });
+    if (missing.length) return showError('Responde todas las preguntas', missing);
+    const { error } = await sb.from('checkins').insert(values);
+    if (error) return showError('No pudimos enviar tu tamizaje', [dbMessage(error)]);
+    state.step = 'completo';
+    go('tz-inicial-ok');
+  }
+
+  async function doNewPassword() {
+    const scr = $('.scr.v-nueva-clave');
+    if (missingFields(scr).length) return showError('Completa los datos', ['Escribe tu nueva contraseña dos veces.']);
+    const p1 = $('#nc-pass');
+    const p2 = $('#nc-pass2');
+    if (p1.value.length < 8) return showError('Contraseña demasiado corta', ['Usa al menos 8 caracteres.'], [fieldOf('nc-pass')]);
+    if (p1.value !== p2.value) return showError('Las contraseñas no coinciden', ['Escribe la misma contraseña en los dos campos.'], [fieldOf('nc-pass2')]);
+    const { error } = await sb.auth.updateUser({ password: p1.value });
+    if (error) return showError('No pudimos cambiar tu contraseña', [authMessage(error)]);
+    p1.value = '';
+    p2.value = '';
+    state.recovery = false;
+    await loadState();
+    go(homeScreen());
+  }
+
+  async function doLogout() {
+    try { await sb.auth.signOut(); } catch (e) { console.error(e); }
+    state = { user: null, role: null, step: null, recovery: false };
+    $$('input[type=password]').forEach((i) => { i.value = ''; });
+    go('bienvenida');
+  }
+
+  // Boutons qui déclenchent une action au lieu de changer simplement d'écran
+  const handlers = new Map();
+  const bind = (selector, fn) => $$(selector).forEach((el) => handlers.set(el, fn));
+  bind('.v-login .form label[for="s-home"], .v-forgot .form label[for="s-home"], .v-forgot-ok .form label[for="s-home"]', doLogin);
+  bind('.v-forgot .sheet label[for="s-forgot-ok"]', doForgot);
+  bind('.v-registro1 label[for="s-registro2"]', doSignUp);
+  bind('.v-registro2 label[for="s-registro3"]', doRegister);
+  bind('.v-registro3 label[for="s-tz-inicial"]', doProfile);
+  bind('#tz-inicial-tzSend', doInitialScreening);
+  bind('#nc-save', doNewPassword);
+  bind('.v-perfil label[for="s-bienvenida"], .s-user label[for="s-bienvenida"]', doLogout);
+
+  async function run(fn, btn) {
+    if (btn.getAttribute('aria-disabled') === 'true') return;
+    const label = btn.innerHTML;
+    btn.setAttribute('aria-disabled', 'true');
+    try {
+      clearErrors();
+      await fn(btn);
+    } catch (e) {
+      console.error(e);
+      showError('Ocurrió un error', ['No se pudo completar la acción. Inténtalo de nuevo.']);
+    } finally {
+      btn.innerHTML = label;
+      btn.removeAttribute('aria-disabled');
+    }
+  }
+
+  // Toute navigation passe par go(), qui refuse les écrans non autorisés
+  document.addEventListener('click', (e) => {
+    const label = e.target.closest('label[for^="s-"]');
+    if (!label) return;
+    e.preventDefault();
+    // Un bouton d'un écran masqué ne fait rien
+    const scr = label.closest('.scr');
+    if (scr && !scr.classList.contains('v-' + current())) return;
+    const fn = handlers.get(label);
+    if (fn) run(fn, label);
+    else go(label.htmlFor.slice(2));
+  }, true);
+
+  document.addEventListener('change', (e) => {
+    if (e.target.classList && e.target.classList.contains('nav-r') && !allowedScreens().includes(current())) {
+      go(homeScreen());
+    }
+  });
+
+  document.addEventListener('input', (e) => {
+    const field = e.target.closest && e.target.closest('.field');
+    if (field) field.classList.remove('bad');
+  });
+
+  // ── Démarrage ───────────────────────────────────────────────────────────────
+  async function init() {
+    if (!window.supabase) {
+      setupProblem = { title: 'Sin conexión', text: 'No se pudo cargar el servicio de inicio de sesión. Revisa tu conexión a internet y recarga la página.' };
+      go('bienvenida');
+      return;
+    }
+    if (SUPABASE_URL.includes('VOTRE-PROJET') || SUPABASE_KEY.includes('VOTRE_CLE')) {
+      setupProblem = { title: 'Configuración pendiente', text: 'Falta añadir la URL y la clave de Supabase en este archivo.' };
+      go('bienvenida');
+      return;
+    }
+
+    const hash = new URLSearchParams(location.hash.slice(1));
+    if (hash.get('type') === 'recovery') state.recovery = true;
+    const linkError = hash.get('error_description');
+
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    sb.auth.onAuthStateChange((event) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        state.recovery = true;
+        setTimeout(() => loadState().then(() => go('nueva-clave')), 0);
+      }
+    });
+
+    try {
+      await loadState();
+    } catch (e) {
+      console.error(e);
+      await sb.auth.signOut().catch(() => {});
+      state = { user: null, role: null, step: null, recovery: false };
+      go('login');
+      showError('Tu cuenta no está lista', ['Contacta al administrador de la plataforma.']);
+      return;
+    }
+    if (location.href.includes('#')) history.replaceState(null, '', pageUrl());
+
+    if (linkError) {
+      go('login');
+      showError('El enlace ya no es válido', ['Pide uno nuevo o inicia sesión con tu contraseña.']);
+      return;
+    }
+    go(homeScreen());
+  }
+
+  init()
+    .catch((e) => { console.error(e); go('bienvenida'); })
+    .finally(() => document.body.classList.remove('booting'));
+})();
+</script>
 </body>
 </html>
