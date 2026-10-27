@@ -1026,6 +1026,15 @@ body:has(#s-bienvenida:checked) .statusbar{background:var(--deep);color:var(--de
 #s-staff-expediente:checked~.sroot .v-staff-expediente{display:block}
 #s-staff-intervencion:checked~.sroot .v-staff-intervencion{display:block}
 #s-staff-ivok:checked~.sroot .v-staff-ivok{display:block}
+#s-chat:checked~.sroot .v-chat{display:block}
+#s-staff-chat:checked~.sroot .v-staff-chat{display:block}
+.reg.msg{background:var(--info-soft);color:var(--ink)}
+.s-nav label{border:0;background:transparent;color:var(--deep-ink-2);padding:9px 14px;border-radius:10px;font-size:15px;display:flex;gap:8px;align-items:center;position:relative;white-space:nowrap;cursor:pointer}
+.s-nav label:hover{background:rgb(255 255 255/.06);color:var(--deep-ink)}
+.s-nav label[aria-current="page"]{background:rgb(255 255 255/.1);color:var(--deep-ink);font-weight:700}
+.s-nav label[aria-current="page"]::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;border-radius:2px;background:var(--deep-ink)}
+@container app (max-width:980px){.s-nav label{padding:9px 10px}}
+@media (min-width:700px){body.is-staff .solo{padding:0}body.is-staff .solo .device{width:100%;max-width:none;height:100%;border-radius:0;padding:0;box-shadow:none;background:var(--bg)}body.is-staff .solo .device::before{display:none}body.is-staff .solo .device-screen{border-radius:0;grid-template-rows:0 1fr}body.is-staff .solo .statusbar{display:none}}
 body.booting .sroot{visibility:hidden}
 #s-perfil:checked~.sroot .v-perfil{display:block}
 #s-staff-panel:checked~.sroot .v-staff-panel{display:block}
@@ -1059,7 +1068,7 @@ body.booting .sroot{visibility:hidden}
 </head>
 <body class="static booting">
 <noscript><div class="nojs"><div><b>OncoAlerta necesita JavaScript</b><p>Activa JavaScript en tu navegador para iniciar sesión.</p></div></div></noscript>
-<input type="radio" name="nav" class="nav-r" id="s-bienvenida" checked aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-login" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-home" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-sent" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-recom" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-historial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-mensajes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-medform" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-perfil" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-panel" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-pacientes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-alertas" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-reportes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro1" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro2" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro3" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-nueva-clave" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-expediente" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-intervencion" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-ivok" aria-hidden="true" tabindex="-1">
+<input type="radio" name="nav" class="nav-r" id="s-bienvenida" checked aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-login" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-forgot-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-home" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-hoy-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tamizaje-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-diario-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-ayuda-sent" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-recom" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-historial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-mensajes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-medform" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-meds-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-perfil" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-panel" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-pacientes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-alertas" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-reportes" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro1" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro2" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro3" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-tz-inicial-ok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-registro-confirm" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-nueva-clave" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-expediente" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-intervencion" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-ivok" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-chat" aria-hidden="true" tabindex="-1"><input type="radio" name="nav" class="nav-r" id="s-staff-chat" aria-hidden="true" tabindex="-1">
 <div class="sroot"><div class="solo"><div class="device"><div class="device-screen"><div class="statusbar" aria-hidden="true"><span>9:41</span><span class="sb-r"><svg viewBox="0 0 17 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12" style="width:25px"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.6"/></svg></span></div><div class="app">
 <div class="scr v-bienvenida"><div class="app-screen full"><div class="welcome">
       <div class="welcome-art"><svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ilustración: una paciente con pañoleta y su acompañante, sentadas frente a la ventana de una habitación de hospital tranquila al amanecer.">
@@ -1159,9 +1168,9 @@ body.booting .sroot{visibility:hidden}
         <div class="p-hello"><div class="grow"><h1>Hola</h1></div><label class="avatar go" aria-label="Mi perfil" for="s-perfil"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></label></div>
         
         <section class="today" aria-label="¿Cómo me siento hoy?">
-          <div><h2>¿Cómo me siento hoy?</h2><p>Elige una carita para empezar tu registro de hoy.</p></div><div class="faces" role="radiogroup" aria-label="¿Cómo me siento hoy?"><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9A7A1"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M15.5 34.5Q24 26.5 32.5 34.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path><path d="M13 14.5l7 2.5M35 14.5l-7 2.5" stroke="#1C2B29" stroke-width="2.4" stroke-linecap="round"></path><path d="M33.5 25c0 2-1.2 3.4-2.6 3.4s-2.6-1.4-2.6-3.4 2.6-5 2.6-5 2.6 3 2.6 5Z" fill="#6FA9D6"></path></svg><span>Muy mal</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#F0C095"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16.5 33.5Q24 28.5 31.5 33.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Mal</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9D9A0"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M17 32h14" stroke="#1C2B29" stroke-width="2.8" stroke-linecap="round"></path></svg><span>Regular</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#BFDCB8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16 29.5Q24 36.5 32 29.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Bien</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#93CDA8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M14.5 28h19Q31.5 38.5 24 38.5T14.5 28Z" fill="#1C2B29"></path><path d="M19 34.5q5 2.6 10 0" stroke="#E98C86" stroke-width="2.4" fill="none" stroke-linecap="round"></path></svg><span>Muy bien</span></label></div>
+          <div><h2>¿Cómo me siento hoy?</h2><p id="home-today-sub">Elige una carita para empezar tu registro de hoy.</p></div><div class="faces" role="radiogroup" aria-label="¿Cómo me siento hoy?"><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9A7A1"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M15.5 34.5Q24 26.5 32.5 34.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path><path d="M13 14.5l7 2.5M35 14.5l-7 2.5" stroke="#1C2B29" stroke-width="2.4" stroke-linecap="round"></path><path d="M33.5 25c0 2-1.2 3.4-2.6 3.4s-2.6-1.4-2.6-3.4 2.6-5 2.6-5 2.6 3 2.6 5Z" fill="#6FA9D6"></path></svg><span>Muy mal</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#F0C095"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16.5 33.5Q24 28.5 31.5 33.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Mal</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9D9A0"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M17 32h14" stroke="#1C2B29" stroke-width="2.8" stroke-linecap="round"></path></svg><span>Regular</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#BFDCB8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16 29.5Q24 36.5 32 29.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Bien</span></label><label class="facebtn" for="s-hoy"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#93CDA8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M14.5 28h19Q31.5 38.5 24 38.5T14.5 28Z" fill="#1C2B29"></path><path d="M19 34.5q5 2.6 10 0" stroke="#E98C86" stroke-width="2.4" fill="none" stroke-linecap="round"></path></svg><span>Muy bien</span></label></div>
         </section>
-        <label class="notice go" for="s-tamizaje"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2.5h6a1 1 0 0 1 1 1V6H8V3.5a1 1 0 0 1 1-1Z"></path><path d="M9 11h6M9 15h6M9 19h3"></path></svg><span><b>Tu seguimiento semanal está listo</b><span>7 preguntas · unos 2 minutos</span></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></label>
+        <div id="home-help"></div><label class="notice go" id="home-weekly" for="s-tamizaje" hidden><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2.5h6a1 1 0 0 1 1 1V6H8V3.5a1 1 0 0 1 1-1Z"></path><path d="M9 11h6M9 15h6M9 19h3"></path></svg><span><b>Tu seguimiento semanal está listo</b><span>7 preguntas · unos 2 minutos</span></span><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></label>
         
         <h2 class="sectitle">Mi espacio</h2>
         <nav class="menu" aria-label="Opciones">
@@ -1169,35 +1178,35 @@ body.booting .sroot{visibility:hidden}
           <label class="menu-item go" style="--tint:var(--t-gris)" for="s-ayuda"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg><span><b>Necesito ayuda</b><small>Avisa a tu equipo de inmediato</small></span><span class="end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span><i class="help-dot"></i></label>
           <label class="menu-item go" style="--tint:var(--t-azul)" for="s-recom"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"></path><path d="M2 21c0-3 1.9-5.4 5.2-6.1 2.4-.5 4.8-2 5.8-3.9"></path></svg><span><b>Recomendaciones</b><small>Respiración, emociones y alimentación</small></span><span class="end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span></label>
           <label class="menu-item go" style="--tint:var(--t-rosa)" for="s-historial"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span><b>Historial</b><small>Tus gráficas semanales</small></span><span class="end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span></label>
-          <label class="menu-item go" style="--tint:var(--t-amarillo)" for="s-mensajes"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span><b>Mensajes</b><small>Médicos, enfermería, psicología…</small></span><span class="end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span></label>
+          <label class="menu-item go" style="--tint:var(--t-amarillo)" for="s-mensajes"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span><b>Mensajes</b><small>Médicos, enfermería, psicología…</small></span><span class="end" id="home-msg-end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span></label>
           <label class="menu-item go" style="--tint:var(--t-verde)" for="s-meds"><svg class="ic lead" viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span><b>Mis medicamentos</b><small>Recordatorios de tus tomas</small></span><span class="end"><svg class="ic go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></span></label>
         </nav>
       </div><footer class="tabbar" aria-label="Navegación principal"><label class="tab go" aria-current="page" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" for="s-historial"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" for="s-ayuda"><span class="ring"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div></div>
 <div class="scr v-hoy"><div class="app-screen"><header class="app-head"><label class="iconbtn go" aria-label="Volver" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></label><h1>¿Cómo me siento hoy?</h1></header>
-      <div class="app-body">
+      <div class="app-body"><div class="errband" role="alert"></div>
         <div class="qblock"><h3>Elige la carita que más se parece a tu ánimo</h3><div class="faces" role="radiogroup" aria-label="¿Cómo me siento hoy?"><input type="radio" class="fr" name="hoy-f0" id="hoy-f0-0"><label class="facebtn" for="hoy-f0-0"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9A7A1"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M15.5 34.5Q24 26.5 32.5 34.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path><path d="M13 14.5l7 2.5M35 14.5l-7 2.5" stroke="#1C2B29" stroke-width="2.4" stroke-linecap="round"></path><path d="M33.5 25c0 2-1.2 3.4-2.6 3.4s-2.6-1.4-2.6-3.4 2.6-5 2.6-5 2.6 3 2.6 5Z" fill="#6FA9D6"></path></svg><span>Muy mal</span></label><input type="radio" class="fr" name="hoy-f0" id="hoy-f0-1"><label class="facebtn" for="hoy-f0-1"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#F0C095"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16.5 33.5Q24 28.5 31.5 33.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Mal</span></label><input type="radio" class="fr" name="hoy-f0" id="hoy-f0-2"><label class="facebtn" for="hoy-f0-2"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E9D9A0"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M17 32h14" stroke="#1C2B29" stroke-width="2.8" stroke-linecap="round"></path></svg><span>Regular</span></label><input type="radio" class="fr" name="hoy-f0" id="hoy-f0-3"><label class="facebtn" for="hoy-f0-3"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#BFDCB8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M16 29.5Q24 36.5 32 29.5" stroke="#1C2B29" stroke-width="2.8" fill="none" stroke-linecap="round"></path></svg><span>Bien</span></label><input type="radio" class="fr" name="hoy-f0" id="hoy-f0-4"><label class="facebtn" for="hoy-f0-4"><svg class="face" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#93CDA8"></circle><circle cx="17.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><circle cx="30.5" cy="20.5" r="2.5" fill="#1C2B29"></circle><path d="M14.5 28h19Q31.5 38.5 24 38.5T14.5 28Z" fill="#1C2B29"></path><path d="M19 34.5q5 2.6 10 0" stroke="#E98C86" stroke-width="2.4" fill="none" stroke-linecap="round"></path></svg><span>Muy bien</span></label></div></div>
         <div class="qblock"><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>¿Cómo comiste?</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-1"><label class="nr-l" for="hoy-r0-1">1</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-2"><label class="nr-l" for="hoy-r0-2">2</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-3"><label class="nr-l" for="hoy-r0-3">3</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-4"><label class="nr-l" for="hoy-r0-4">4</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-5"><label class="nr-l" for="hoy-r0-5">5</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-6"><label class="nr-l" for="hoy-r0-6">6</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-7"><label class="nr-l" for="hoy-r0-7">7</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-8"><label class="nr-l" for="hoy-r0-8">8</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-9"><label class="nr-l" for="hoy-r0-9">9</label><input type="radio" class="nr-i" name="hoy-r0" id="hoy-r0-10"><label class="nr-l" for="hoy-r0-10">10</label></div><div class="ruler-ends"><span>1 · Casi no comí</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>¿Cómo dormiste?</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-1"><label class="nr-l" for="hoy-r1-1">1</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-2"><label class="nr-l" for="hoy-r1-2">2</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-3"><label class="nr-l" for="hoy-r1-3">3</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-4"><label class="nr-l" for="hoy-r1-4">4</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-5"><label class="nr-l" for="hoy-r1-5">5</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-6"><label class="nr-l" for="hoy-r1-6">6</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-7"><label class="nr-l" for="hoy-r1-7">7</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-8"><label class="nr-l" for="hoy-r1-8">8</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-9"><label class="nr-l" for="hoy-r1-9">9</label><input type="radio" class="nr-i" name="hoy-r1" id="hoy-r1-10"><label class="nr-l" for="hoy-r1-10">10</label></div><div class="ruler-ends"><span>1 · Muy mal</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>Nivel de energía</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-1"><label class="nr-l" for="hoy-r2-1">1</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-2"><label class="nr-l" for="hoy-r2-2">2</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-3"><label class="nr-l" for="hoy-r2-3">3</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-4"><label class="nr-l" for="hoy-r2-4">4</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-5"><label class="nr-l" for="hoy-r2-5">5</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-6"><label class="nr-l" for="hoy-r2-6">6</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-7"><label class="nr-l" for="hoy-r2-7">7</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-8"><label class="nr-l" for="hoy-r2-8">8</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-9"><label class="nr-l" for="hoy-r2-9">9</label><input type="radio" class="nr-i" name="hoy-r2" id="hoy-r2-10"><label class="nr-l" for="hoy-r2-10">10</label></div><div class="ruler-ends"><span>1 · Agotado/a</span><span>Mucha energía · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.3 1.6 1.3 2.8 2.5 2.8Z"></path></svg>Nivel de dolor del 1 al 10</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-1"><label class="nr-l" for="hoy-r3-1">1</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-2"><label class="nr-l" for="hoy-r3-2">2</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-3"><label class="nr-l" for="hoy-r3-3">3</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-4"><label class="nr-l" for="hoy-r3-4">4</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-5"><label class="nr-l" for="hoy-r3-5">5</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-6"><label class="nr-l" for="hoy-r3-6">6</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-7"><label class="nr-l" for="hoy-r3-7">7</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-8"><label class="nr-l" for="hoy-r3-8">8</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-9"><label class="nr-l" for="hoy-r3-9">9</label><input type="radio" class="nr-i" name="hoy-r3" id="hoy-r3-10"><label class="nr-l" for="hoy-r3-10">10</label></div><div class="ruler-ends"><span>1 · Casi nada</span><span>El peor · 10</span></div></div></div>
         <div class="qblock"><h3>Estado emocional</h3><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>Ansiedad</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-1"><label class="nr-l" for="hoy-r4-1">1</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-2"><label class="nr-l" for="hoy-r4-2">2</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-3"><label class="nr-l" for="hoy-r4-3">3</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-4"><label class="nr-l" for="hoy-r4-4">4</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-5"><label class="nr-l" for="hoy-r4-5">5</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-6"><label class="nr-l" for="hoy-r4-6">6</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-7"><label class="nr-l" for="hoy-r4-7">7</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-8"><label class="nr-l" for="hoy-r4-8">8</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-9"><label class="nr-l" for="hoy-r4-9">9</label><input type="radio" class="nr-i" name="hoy-r4" id="hoy-r4-10"><label class="nr-l" for="hoy-r4-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"></path><path d="M16 14v6M8 14v6M12 16v6"></path></svg>Tristeza</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-1"><label class="nr-l" for="hoy-r5-1">1</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-2"><label class="nr-l" for="hoy-r5-2">2</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-3"><label class="nr-l" for="hoy-r5-3">3</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-4"><label class="nr-l" for="hoy-r5-4">4</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-5"><label class="nr-l" for="hoy-r5-5">5</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-6"><label class="nr-l" for="hoy-r5-6">6</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-7"><label class="nr-l" for="hoy-r5-7">7</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-8"><label class="nr-l" for="hoy-r5-8">8</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-9"><label class="nr-l" for="hoy-r5-9">9</label><input type="radio" class="nr-i" name="hoy-r5" id="hoy-r5-10"><label class="nr-l" for="hoy-r5-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div></div>
       </div>
-      <footer class="app-foot"><label class="btn block go" id="hoy-hoySave" for="s-hoy-ok">Guardar registro</label></footer></div></div>
+      <footer class="app-foot"><label class="btn block go" id="hoy-hoySave" for="s-hoy-ok" data-action="guardar-hoy">Guardar registro</label></footer></div></div>
 <div class="scr v-hoy-ok"><div class="app-screen"><header class="app-head"><h1>Registro guardado</h1></header>
       <div class="app-body">
         <div class="result"><div class="badge "><svg class="ic check-draw" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></div>
-          <h2>Listo, guardamos tu registro</h2><p>Tu equipo de salud lo revisará. Si alguna respuesta necesita atención, te contactará.</p></div>
+          <h2>Listo, guardamos tu registro</h2><p>Tu equipo de salud lo revisará. Si alguna respuesta necesita atención, te contactará.</p></div><div id="hoyok-extra"></div>
         
         
       </div>
       <footer class="app-foot"><div class="btnrow"><label class="btn go" for="s-home">Ir al inicio</label></div></footer></div></div>
 <div class="scr v-tamizaje"><div class="app-screen"><header class="app-head"><label class="iconbtn go" aria-label="Volver" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Seguimiento semanal</h1></header>
-      <div class="app-body">
+      <div class="app-body"><div class="errband" role="alert"></div>
         <p class="intro">Responde del 1 al 10 según cómo te has sentido esta semana. No hay respuestas correctas o incorrectas.</p>
         <div class="form"><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path></svg>Ansiedad</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-1"><label class="nr-l" for="tamizaje-r0-1">1</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-2"><label class="nr-l" for="tamizaje-r0-2">2</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-3"><label class="nr-l" for="tamizaje-r0-3">3</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-4"><label class="nr-l" for="tamizaje-r0-4">4</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-5"><label class="nr-l" for="tamizaje-r0-5">5</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-6"><label class="nr-l" for="tamizaje-r0-6">6</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-7"><label class="nr-l" for="tamizaje-r0-7">7</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-8"><label class="nr-l" for="tamizaje-r0-8">8</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-9"><label class="nr-l" for="tamizaje-r0-9">9</label><input type="radio" class="nr-i" name="tamizaje-r0" id="tamizaje-r0-10"><label class="nr-l" for="tamizaje-r0-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"></path><path d="M16 14v6M8 14v6M12 16v6"></path></svg>Tristeza</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-1"><label class="nr-l" for="tamizaje-r1-1">1</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-2"><label class="nr-l" for="tamizaje-r1-2">2</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-3"><label class="nr-l" for="tamizaje-r1-3">3</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-4"><label class="nr-l" for="tamizaje-r1-4">4</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-5"><label class="nr-l" for="tamizaje-r1-5">5</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-6"><label class="nr-l" for="tamizaje-r1-6">6</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-7"><label class="nr-l" for="tamizaje-r1-7">7</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-8"><label class="nr-l" for="tamizaje-r1-8">8</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-9"><label class="nr-l" for="tamizaje-r1-9">9</label><input type="radio" class="nr-i" name="tamizaje-r1" id="tamizaje-r1-10"><label class="nr-l" for="tamizaje-r1-10">10</label></div><div class="ruler-ends"><span>1 · Nada</span><span>Muchísima · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>Sueño</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-1"><label class="nr-l" for="tamizaje-r2-1">1</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-2"><label class="nr-l" for="tamizaje-r2-2">2</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-3"><label class="nr-l" for="tamizaje-r2-3">3</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-4"><label class="nr-l" for="tamizaje-r2-4">4</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-5"><label class="nr-l" for="tamizaje-r2-5">5</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-6"><label class="nr-l" for="tamizaje-r2-6">6</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-7"><label class="nr-l" for="tamizaje-r2-7">7</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-8"><label class="nr-l" for="tamizaje-r2-8">8</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-9"><label class="nr-l" for="tamizaje-r2-9">9</label><input type="radio" class="nr-i" name="tamizaje-r2" id="tamizaje-r2-10"><label class="nr-l" for="tamizaje-r2-10">10</label></div><div class="ruler-ends"><span>1 · Muy mal</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>Alimentación</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-1"><label class="nr-l" for="tamizaje-r3-1">1</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-2"><label class="nr-l" for="tamizaje-r3-2">2</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-3"><label class="nr-l" for="tamizaje-r3-3">3</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-4"><label class="nr-l" for="tamizaje-r3-4">4</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-5"><label class="nr-l" for="tamizaje-r3-5">5</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-6"><label class="nr-l" for="tamizaje-r3-6">6</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-7"><label class="nr-l" for="tamizaje-r3-7">7</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-8"><label class="nr-l" for="tamizaje-r3-8">8</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-9"><label class="nr-l" for="tamizaje-r3-9">9</label><input type="radio" class="nr-i" name="tamizaje-r3" id="tamizaje-r3-10"><label class="nr-l" for="tamizaje-r3-10">10</label></div><div class="ruler-ends"><span>1 · Casi no comí</span><span>Muy bien · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.3.3 1.6 1.3 2.8 2.5 2.8Z"></path></svg>Dolor</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-1"><label class="nr-l" for="tamizaje-r4-1">1</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-2"><label class="nr-l" for="tamizaje-r4-2">2</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-3"><label class="nr-l" for="tamizaje-r4-3">3</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-4"><label class="nr-l" for="tamizaje-r4-4">4</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-5"><label class="nr-l" for="tamizaje-r4-5">5</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-6"><label class="nr-l" for="tamizaje-r4-6">6</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-7"><label class="nr-l" for="tamizaje-r4-7">7</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-8"><label class="nr-l" for="tamizaje-r4-8">8</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-9"><label class="nr-l" for="tamizaje-r4-9">9</label><input type="radio" class="nr-i" name="tamizaje-r4" id="tamizaje-r4-10"><label class="nr-l" for="tamizaje-r4-10">10</label></div><div class="ruler-ends"><span>1 · Casi nada</span><span>El peor · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"></path></svg>Energía</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-1"><label class="nr-l" for="tamizaje-r5-1">1</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-2"><label class="nr-l" for="tamizaje-r5-2">2</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-3"><label class="nr-l" for="tamizaje-r5-3">3</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-4"><label class="nr-l" for="tamizaje-r5-4">4</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-5"><label class="nr-l" for="tamizaje-r5-5">5</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-6"><label class="nr-l" for="tamizaje-r5-6">6</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-7"><label class="nr-l" for="tamizaje-r5-7">7</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-8"><label class="nr-l" for="tamizaje-r5-8">8</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-9"><label class="nr-l" for="tamizaje-r5-9">9</label><input type="radio" class="nr-i" name="tamizaje-r5" id="tamizaje-r5-10"><label class="nr-l" for="tamizaje-r5-10">10</label></div><div class="ruler-ends"><span>1 · Agotado/a</span><span>Mucha energía · 10</span></div></div><div class="nr"><div class="nr-top"><span class="lbl"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg>Apoyo emocional</span></div><div class="nr-row" role="radiogroup"><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-1"><label class="nr-l" for="tamizaje-r6-1">1</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-2"><label class="nr-l" for="tamizaje-r6-2">2</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-3"><label class="nr-l" for="tamizaje-r6-3">3</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-4"><label class="nr-l" for="tamizaje-r6-4">4</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-5"><label class="nr-l" for="tamizaje-r6-5">5</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-6"><label class="nr-l" for="tamizaje-r6-6">6</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-7"><label class="nr-l" for="tamizaje-r6-7">7</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-8"><label class="nr-l" for="tamizaje-r6-8">8</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-9"><label class="nr-l" for="tamizaje-r6-9">9</label><input type="radio" class="nr-i" name="tamizaje-r6" id="tamizaje-r6-10"><label class="nr-l" for="tamizaje-r6-10">10</label></div><div class="ruler-ends"><span>1 · Me siento solo/a</span><span>Muy acompañado/a · 10</span></div></div></div>
       </div>
-      <footer class="app-foot"><label class="btn block go" id="tamizaje-tzSend" for="s-tamizaje-ok">Enviar tamizaje</label></footer></div></div>
+      <footer class="app-foot"><label class="btn block go" id="tamizaje-tzSend" for="s-tamizaje-ok" data-action="enviar-tamizaje">Enviar tamizaje</label></footer></div></div>
 <div class="scr v-tamizaje-ok"><div class="app-screen"><header class="app-head"><h1>Tamizaje enviado</h1></header>
       <div class="app-body">
         <div class="result"><div class="badge "><svg class="ic check-draw" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></div>
-          <h2>Listo, enviamos tu seguimiento</h2><p>Tu equipo de salud lo revisará. Si alguna respuesta necesita atención, te contactará.</p></div>
+          <h2>Listo, enviamos tu seguimiento</h2><p>Tu equipo de salud lo revisará. Si alguna respuesta necesita atención, te contactará.</p></div><div id="tzok-extra"></div>
         
         
       </div>
@@ -1211,15 +1220,15 @@ body.booting .sroot{visibility:hidden}
           <input type="file" accept="audio/*" capture="" id="diario-voiceFile" class="sr" tabindex="-1">
         </div>
         <label class="toggle"><span>Compartir con mi equipo de salud<small>Tu equipo verá esta entrada en tu expediente.</small></span><input type="checkbox" id="diario-dShare" checked=""></label>
-        <label class="btn block go" style="margin-top:16px" for="s-diario-ok">Guardar en mi diario</label>
+        <label class="btn block go" style="margin-top:16px" for="s-diario-ok" data-action="guardar-diario">Guardar en mi diario</label>
         <h2 class="sectitle">Entradas anteriores</h2>
-        <div class="empty"><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"></path><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"></path><path d="M9 7.5h6M9 11h4"></path></svg><b>Aún no tienes entradas</b><span>Lo que escribas o grabes en tu diario aparecerá aquí.</span></div>
+        <div id="diario-entries"></div>
       </div></div></div>
 <div class="scr v-diario-ok"><div class="app-screen"><header class="app-head"><label aria-label="Volver" class="iconbtn go" for="s-home"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Mi diario</h1></header>
 <div class="app-body">
 <div class="result"><div class="badge"><svg class="ic check-draw" viewbox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></div><h2>Guardamos tu entrada</h2><p>Si elegiste compartirla, tu equipo de salud podrá leerla en tu expediente.</p></div></div><footer class="app-foot"><label class="btn block go" for="s-home">Ir al inicio</label></footer></div></div>
 <div class="scr v-ayuda"><div class="app-screen"><header class="app-head"><h1>Necesito ayuda</h1></header>
-        <div class="app-body"><div class="sos-wrap">
+        <div class="app-body"><div class="sos-wrap"><div id="ay-open" style="width:100%"></div>
           <p>Si necesitas apoyo urgente de tu equipo de salud, presiona el botón. Te pediremos confirmar antes de enviar la alerta.</p>
           <label class="sosbtn go" for="s-ayuda-confirm"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Necesito ayuda ahora</span></label>
           <div class="callout" style="width:100%;text-align:left"><b>Emergencia que pone en riesgo tu vida</b><div class="phone-line"><span class="numtxt">911</span></div><span class="muted small">Llama al 911 desde tu teléfono.</span></div>
@@ -1229,17 +1238,13 @@ body.booting .sroot{visibility:hidden}
           <p>Si necesitas apoyo urgente de tu equipo de salud, presiona el botón. Te pediremos confirmar antes de enviar la alerta.</p>
           <label class="sosbtn go" for="s-ayuda-confirm"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Necesito ayuda ahora</span></label>
           <div class="callout" style="width:100%;text-align:left"><b>Emergencia que pone en riesgo tu vida</b><div class="phone-line"><span class="numtxt">911</span></div><span class="muted small">Llama al 911 desde tu teléfono.</span></div>
-        </div></div><footer class="tabbar" aria-label="Navegación principal"><label class="tab go" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" for="s-historial"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" aria-current="page" for="s-ayuda"><span class="ring"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div><div class="layer on"><label class="scrim go" for="s-ayuda"></label><div class="sheet " role="dialog" aria-modal="true" aria-label="Confirmar alerta" tabindex="-1"><div class="grab" aria-hidden="true"></div><h2>¿Enviar alerta a tu equipo?</h2><p class="lead">Tu equipo de salud recibirá un aviso urgente. Elige el motivo (opcional).</p>
+        </div></div><footer class="tabbar" aria-label="Navegación principal"><label class="tab go" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" for="s-historial"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" aria-current="page" for="s-ayuda"><span class="ring"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div><div class="layer on"><label class="scrim go" for="s-ayuda"></label><div class="sheet " role="dialog" aria-modal="true" aria-label="Confirmar alerta" tabindex="-1"><div class="grab" aria-hidden="true"></div><div class="errband" role="alert"></div><h2>¿Enviar alerta a tu equipo?</h2><p class="lead">Tu equipo de salud recibirá un aviso urgente. Elige el motivo (opcional).</p>
         <div class="chips" data-chips="motivo" data-multi="0" role="radiogroup" aria-label="Motivo"><input type="radio" class="ci" name="ayuda-confirm-c0" id="ayuda-confirm-c0-0"><label class="chip" for="ayuda-confirm-c0-0">Dolor fuerte</label><input type="radio" class="ci" name="ayuda-confirm-c0" id="ayuda-confirm-c0-1"><label class="chip" for="ayuda-confirm-c0-1">Ansiedad</label><input type="radio" class="ci" name="ayuda-confirm-c0" id="ayuda-confirm-c0-2"><label class="chip" for="ayuda-confirm-c0-2">Tristeza</label><input type="radio" class="ci" name="ayuda-confirm-c0" id="ayuda-confirm-c0-3"><label class="chip" for="ayuda-confirm-c0-3">Emergencia física</label><input type="radio" class="ci" name="ayuda-confirm-c0" id="ayuda-confirm-c0-4"><label class="chip" for="ayuda-confirm-c0-4">Otro</label></div>
         <div class="field" id="ayuda-confirm-otroWrap" hidden="" style="margin-top:12px"><label for="ayuda-confirm-otroTxt">Cuéntanos brevemente</label><input class="input" id="ayuda-confirm-otroTxt"></div>
-        <div class="btnrow" style="margin-top:20px"><label class="btn danger block go" for="s-ayuda-sent"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg> Enviar alerta ahora</label><label class="btn ghost block go" for="s-ayuda">Cancelar</label></div></div></div></div>
+        <div class="btnrow" style="margin-top:20px"><label class="btn danger block go" for="s-ayuda-sent" data-action="enviar-ayuda"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg> Enviar alerta ahora</label><label class="btn ghost block go" for="s-ayuda">Cancelar</label></div></div></div></div>
 <div class="scr v-ayuda-sent"><div class="app-screen"><header class="app-head"><h1>Alerta enviada</h1></header>
         <div class="app-body"><div class="sos-status">
-          <ol class="steps">
-            <li class="done"><span class="dot"><svg class="ic xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div><b>Alerta enviada</b><small>Necesito ayuda ahora</small></div></li>
-            <li class="done"><span class="dot"><svg class="ic xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><div><b>Tu equipo de salud fue notificado</b><small>Personal de enfermería de turno y tu médico tratante</small></div></li>
-            <li class="now"><span class="dot"><svg class="ic xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><b>Esperando respuesta</b><small>Mantén tu teléfono cerca.</small></div></li>
-          </ol>
+          <ol class="steps" id="as-steps"></ol>
           <div class="callout crit"><b>Si estás en peligro inmediato, llama al 911</b><div class="phone-line"><span class="numtxt">911</span></div></div>
           <label class="btn block go" for="s-recom"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg> Respirar 1 minuto mientras esperas</label>
           <label class="btn ghost block go" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg> Escribir a mi equipo</label>
@@ -1268,15 +1273,24 @@ body.booting .sroot{visibility:hidden}
 </div></div></div>
 <div class="scr v-historial"><div class="app-screen"><header class="app-head"><h1>Historial</h1></header>
 <div class="app-body">
-<div class="empty"><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><b>Aún no hay registros</b><span>Cuando completes tu registro diario y tu seguimiento semanal, aquí verás cómo evolucionan tu ansiedad, tristeza, sueño y energía.</span><label class="btn go" for="s-hoy">Hacer mi registro de hoy</label></div>
+<div id="hi-empty"><div class="empty"><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><b>Aún no hay registros</b><span>Cuando completes tu registro diario y tu seguimiento semanal, aquí verás cómo evolucionan tu ansiedad, tristeza, sueño y energía.</span><label class="btn go" for="s-hoy">Hacer mi registro de hoy</label></div></div>
+<div id="hi-content" hidden>
+<div class="seg wrap" role="tablist" aria-label="Indicador" id="hi-tabs"><button type="button" role="tab" data-code="anxiety" aria-selected="true">Ansiedad</button><button type="button" role="tab" data-code="sadness" aria-selected="false">Tristeza</button><button type="button" role="tab" data-code="sleep" aria-selected="false">Sueño</button><button type="button" role="tab" data-code="energy" aria-selected="false">Energía</button><button type="button" role="tab" data-code="eating" aria-selected="false">Alimentación</button><button type="button" role="tab" data-code="pain" aria-selected="false">Dolor</button></div>
+<div id="hi-chart"></div>
+<p class="hist-sum" id="hi-sum"></p>
+<h2 class="sectitle">Seguimiento semanal</h2>
+<div class="tablewrap"><table class="weektable"><thead><tr><th>Semana</th><th class="r">Ans.</th><th class="r">Trist.</th><th class="r">Sueño</th><th class="r">Energía</th></tr></thead><tbody id="hi-weeks"></tbody></table></div>
+<h2 class="sectitle">Tamizajes enviados</h2>
+<div class="entries" id="hi-tz"></div>
+</div>
 </div><footer aria-label="Navegación principal" class="tabbar"><label class="tab go" for="s-home"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label aria-current="page" class="tab go" for="s-historial"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" for="s-ayuda"><span class="ring"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" for="s-mensajes"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" for="s-meds"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div></div>
 <div class="scr v-mensajes"><div class="app-screen"><header class="app-head"><h1>Mensajes</h1></header>
       <div class="app-body"><p class="intro">Comunicación con tu equipo: médicos, enfermería, psicología, nutrición y fisioterapia.</p>
-        <div class="empty"><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><b>Aún no tienes mensajes</b><span>Cuando tu equipo de salud te escriba, sus mensajes aparecerán aquí. Para una urgencia usa «Necesito ayuda».</span></div>
+        <div class="threads" id="msg-threads"><p class="muted small" style="padding:8px 0">Cargando…</p></div>
       </div><footer class="tabbar" aria-label="Navegación principal"><label class="tab go" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" for="s-historial"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" for="s-ayuda"><span class="ring"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" aria-current="page" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div></div>
 <div class="scr v-meds"><div class="app-screen"><header class="app-head"><h1>Mis medicamentos</h1><label class="iconbtn go" aria-label="Agregar medicamento" for="s-medform"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></label></header>
       <div class="app-body">
-        <div class="empty"><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><b>Agrega tu primer medicamento</b><span>Te avisaremos a la hora de cada toma con el mensaje «Es momento de tomar el medicamento».</span><label class="btn go" for="s-medform"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg> Agregar medicamento</label></div>
+        <div id="meds-list"><p class="muted small" style="padding:8px 0">Cargando…</p></div><div class="empty" id="meds-empty" hidden><svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><b>Agrega tu primer medicamento</b><span>A la hora de cada toma, mientras tengas OncoAlerta abierta, verás el aviso «Es momento de tomar el medicamento».</span><label class="btn go" for="s-medform"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg> Agregar medicamento</label></div>
         
       </div><footer class="tabbar" aria-label="Navegación principal"><label class="tab go" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" for="s-historial"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg><span>Historial</span></label><label class="tab sos go" for="s-ayuda"><span class="ring"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="m5.6 5.6 3.6 3.6M14.8 14.8l3.6 3.6M14.8 9.2l3.6-3.6M5.6 18.4l3.6-3.6"></path></svg></span><span>Ayuda</span></label><label class="tab go" for="s-mensajes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span>Mensajes</span></label><label class="tab go" aria-current="page" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg><span>Medicinas</span></label></footer></div></div>
 <div class="scr v-medform"><div class="app-screen"><header class="app-head"><label class="iconbtn go" aria-label="Volver" for="s-meds"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Agregar medicamento</h1></header>
@@ -1289,10 +1303,10 @@ body.booting .sroot{visibility:hidden}
           <div class="field" data-req="Duración del tratamiento"><label for="medform-mfDur">Duración del tratamiento</label><input class="input" id="medform-mfDur" type="text" value="" placeholder="Ej. 5 días"><span class="err">Este dato es obligatorio.</span></div>
         </div>
       </div>
-      <footer class="app-foot"><label class="btn block go" for="s-meds-ok">Guardar medicamento</label></footer></div></div>
+      <footer class="app-foot"><label class="btn block go" for="s-meds-ok" data-action="guardar-med">Guardar medicamento</label></footer></div></div>
 <div class="scr v-meds-ok"><div class="app-screen"><header class="app-head"><label aria-label="Volver" class="iconbtn go" for="s-meds"><svg aria-hidden="true" class="ic" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Mis medicamentos</h1></header>
 <div class="app-body">
-<div class="result"><div class="badge"><svg class="ic check-draw" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></div><h2>Guardamos tu medicamento</h2><p>Te avisaremos a la hora de cada toma con el mensaje «Es momento de tomar el medicamento».</p></div></div><footer class="app-foot"><label class="btn block go" for="s-home">Ir al inicio</label></footer></div></div>
+<div class="result"><div class="badge"><svg class="ic check-draw" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></div><h2>Guardamos tu medicamento</h2><p>A la hora de cada toma, mientras tengas OncoAlerta abierta, verás el aviso «Es momento de tomar el medicamento».</p></div></div><footer class="app-foot"><label class="btn block go" for="s-home">Ir al inicio</label></footer></div></div>
 <div class="scr v-perfil"><div class="app-screen"><header class="app-head"><label class="iconbtn go" aria-label="Volver" for="s-home"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></label><h1>Mi perfil</h1></header>
       <div class="app-body">
         <div class="p-hello"><span class="avatar" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><div class="grow"><h1 style="font-size:22px">Mis datos</h1><p>Los que registraste al crear tu cuenta</p></div></div>
@@ -1307,7 +1321,7 @@ body.booting .sroot{visibility:hidden}
     <div class="s-user"><span class="who"><b>Personal de salud</b><small>Mi unidad</small></span><span class="avatar" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><label class="iconbtn go" aria-label="Cerrar sesión" for="s-bienvenida"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></label></div></header><div class="s-body"><div class="errband" role="alert"></div>
         <div class="s-title"><div class="grow"><h1>Hola</h1><p id="sp-date"></p></div><span class="live">En vivo</span></div>
         <div id="sp-urgent"></div>
-        <div class="distrib"><div class="distrib-top"><span><b id="sp-total">0</b> pacientes en seguimiento</span><span class="muted" id="sp-alerts">0 alertas activas</span></div>
+        <div class="distrib"><div class="distrib-top"><span><b id="sp-total">0</b> <span id="sp-total-word">pacientes</span> en seguimiento</span><span class="muted" id="sp-alerts">0 alertas activas</span></div>
           <div class="distbar" id="sp-bar" hidden></div>
           <div class="distleg" id="sp-leg"><label class="inert"><i class="bg-critico"></i>Riesgo crítico <b data-lv="critico">0</b></label><label class="inert"><i class="bg-moderado"></i>Riesgo moderado <b data-lv="moderado">0</b></label><label class="inert"><i class="bg-seguimiento"></i>Seguimiento <b data-lv="seguimiento">0</b></label><label class="inert"><i class="bg-estable"></i>Estables <b data-lv="estable">0</b></label></div></div>
         <div id="sp-sections"><p class="muted small" style="padding:8px 0">Cargando…</p></div>
@@ -1409,7 +1423,7 @@ body.booting .sroot{visibility:hidden}
     <div class="s-user"><span class="who"><b>Personal de salud</b><small>Mi unidad</small></span><span class="avatar" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><label class="iconbtn go" aria-label="Cerrar sesión" for="s-bienvenida"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></label></div></header><div class="s-body"><div class="errband" role="alert"></div>
         <label class="linkbtn backlink go" id="se-back" for="s-staff-panel"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Volver</label>
         <div id="se-body"><p class="muted small" style="padding:8px 0">Cargando…</p></div>
-      </div><footer class="s-foot"><div class="actbar"><a class="btn ghost" id="se-call" href="#" hidden><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"></path></svg><span>Contactar</span></a><label class="btn ghost inert" aria-disabled="true"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span class="long">Enviar mensaje</span><span class="short">Mensaje</span></label><label class="btn go" id="se-iv" for="s-staff-intervencion"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2.5h6a1 1 0 0 1 1 1V6H8V3.5a1 1 0 0 1 1-1Z"></path><path d="M9 11h6M9 15h6M9 19h3"></path></svg><span class="long">Registrar intervención</span><span class="short">Intervención</span></label><label class="btn ghost inert" aria-disabled="true"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"></path><path d="M16 7h6v6"></path></svg><span class="long">Escalar caso</span><span class="short">Escalar</span></label></div><nav class="s-tabbar" aria-label="Secciones"><label class="tab go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" aria-current="page" for="s-staff-pacientes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg><span>Pacientes</span></label><label class="tab go" for="s-staff-alertas"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Alertas</span></label><label class="tab go" for="s-staff-reportes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg><span>Reportes</span></label></nav></footer></div></div>
+      </div><footer class="s-foot"><div class="actbar"><a class="btn ghost" id="se-call" href="#" hidden><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"></path></svg><span>Contactar</span></a><label class="btn ghost go" id="se-msg" for="s-staff-chat"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg><span class="long">Enviar mensaje</span><span class="short">Mensaje</span></label><label class="btn go" id="se-iv" for="s-staff-intervencion"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2.5h6a1 1 0 0 1 1 1V6H8V3.5a1 1 0 0 1 1-1Z"></path><path d="M9 11h6M9 15h6M9 19h3"></path></svg><span class="long">Registrar intervención</span><span class="short">Intervención</span></label><label class="btn ghost inert" aria-disabled="true"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.5 8.5-5-5L2 17"></path><path d="M16 7h6v6"></path></svg><span class="long">Escalar caso</span><span class="short">Escalar</span></label></div><nav class="s-tabbar" aria-label="Secciones"><label class="tab go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" aria-current="page" for="s-staff-pacientes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg><span>Pacientes</span></label><label class="tab go" for="s-staff-alertas"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Alertas</span></label><label class="tab go" for="s-staff-reportes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg><span>Reportes</span></label></nav></footer></div></div>
 
 <div class="scr v-staff-intervencion"><div class="app-screen"><header class="s-head"><span class="brand"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41C10.5 31.5 5 24.5 5 16.8 5 10.8 9.6 6 15.3 6c3.8 0 6.7 2 8.7 5 2-3 4.9-5 8.7-5C38.4 6 43 10.8 43 16.8 43 24.5 37.5 31.5 24 41Z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"></path><path d="M9.5 22.5h7.2l3-6.8 4.8 13 3.2-8.2h10.8" fill="none" stroke="#F08A7E" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>OncoAlerta</b><small>Personal de salud</small></span></span>
     <nav class="s-nav" aria-label="Secciones"><label for="s-staff-panel" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg>Inicio</label><label aria-current="page" for="s-staff-pacientes" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg>Pacientes</label><label for="s-staff-alertas" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Alertas</label><label for="s-staff-reportes" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg>Reportes</label></nav>
@@ -1435,6 +1449,17 @@ body.booting .sroot{visibility:hidden}
         <div class="btnrow" style="justify-content:center"><label class="btn go" for="s-staff-panel">Volver al panel</label><label class="btn ghost go" for="s-staff-expediente">Ver paciente</label></div></div></div>
       </div><footer class="s-foot"><nav class="s-tabbar" aria-label="Secciones"><label class="tab go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" aria-current="page" for="s-staff-pacientes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg><span>Pacientes</span></label><label class="tab go" for="s-staff-alertas"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Alertas</span></label><label class="tab go" for="s-staff-reportes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg><span>Reportes</span></label></nav></footer></div></div>
 
+<div class="scr v-chat"><div class="app-screen"><header class="app-head"><label aria-label="Volver" class="iconbtn go" for="s-mensajes"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></label><span aria-hidden="true" class="avatar sm chat-av"></span><div class="chat-who"><b></b><small></small></div></header>
+<div class="app-body"><div class="errband" role="alert"></div><div class="chat" id="chat-list"></div></div>
+<footer class="app-foot"><div class="composer"><label class="sr" for="chat-txt">Mensaje</label><textarea class="textarea" id="chat-txt" placeholder="Escribe un mensaje" rows="1"></textarea><label aria-label="Enviar" class="btn go" for="s-chat" data-action="enviar-mensaje"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7Z"></path></svg></label></div></footer></div></div>
+<div class="scr v-staff-chat"><div class="app-screen"><header class="s-head"><span class="brand"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41C10.5 31.5 5 24.5 5 16.8 5 10.8 9.6 6 15.3 6c3.8 0 6.7 2 8.7 5 2-3 4.9-5 8.7-5C38.4 6 43 10.8 43 16.8 43 24.5 37.5 31.5 24 41Z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"></path><path d="M9.5 22.5h7.2l3-6.8 4.8 13 3.2-8.2h10.8" fill="none" stroke="#F08A7E" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>OncoAlerta</b><small>Personal de salud</small></span></span>
+    <nav class="s-nav" aria-label="Secciones"><label for="s-staff-panel" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg>Inicio</label><label aria-current="page" for="s-staff-pacientes" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg>Pacientes</label><label for="s-staff-alertas" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>Alertas</label><label for="s-staff-reportes" class="go"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg>Reportes</label></nav>
+    <div class="s-user"><span class="who"><b>Personal de salud</b><small>Mi unidad</small></span><span class="avatar" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span><label class="iconbtn go" aria-label="Cerrar sesión" for="s-bienvenida"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></label></div></header><div class="s-body"><div class="errband" role="alert"></div>
+        <label class="linkbtn backlink go" for="s-staff-expediente"><svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Volver al expediente</label>
+        <div class="s-title" style="align-items:center"><span class="avatar sm chat-av" aria-hidden="true"></span><div class="chat-who"><b></b><small></small></div></div>
+        <div class="chat"></div>
+      </div><footer class="s-foot"><div class="composer" style="padding:8px 12px"><label class="sr" for="schat-txt">Mensaje</label><textarea class="textarea" id="schat-txt" placeholder="Escribe un mensaje al paciente" rows="1"></textarea><label aria-label="Enviar" class="btn go" for="s-staff-chat" data-action="enviar-mensaje"><svg aria-hidden="true" class="ic" viewbox="0 0 24 24"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7Z"></path></svg></label></div><nav class="s-tabbar" aria-label="Secciones"><label class="tab go" for="s-staff-panel"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"></path></svg><span>Inicio</span></label><label class="tab go" aria-current="page" for="s-staff-pacientes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"></path></svg><span>Pacientes</span></label><label class="tab go" for="s-staff-alertas"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span>Alertas</span></label><label class="tab go" for="s-staff-reportes"><svg class="ic " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M8 17v-4M13 17V8M18 17v-7"></path></svg><span>Reportes</span></label></nav></footer></div></div>
+
 </div></div></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -1449,7 +1474,7 @@ body.booting .sroot{visibility:hidden}
 (() => {
   'use strict';
 
-  // ── À REMPLIR : Supabase → Project Settings → API ──────────────────────────
+  // ── Projet Supabase (clé « publishable » : publique par conception) ────────
   const SUPABASE_URL = 'https://pkbschpqdajcicioxthv.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_093bIYRgDMjTG-CNowxalw_3NHXDVBO';
   // ───────────────────────────────────────────────────────────────────────────
@@ -1460,7 +1485,7 @@ body.booting .sroot{visibility:hidden}
 
   const PUBLIC = ['bienvenida', 'login', 'forgot', 'forgot-ok', 'registro1', 'registro-confirm'];
   const STAFF = ['staff-panel', 'staff-pacientes', 'staff-alertas', 'staff-reportes',
-    'staff-expediente', 'staff-intervencion', 'staff-ivok'];
+    'staff-expediente', 'staff-intervencion', 'staff-ivok', 'staff-chat'];
   const REGISTRATION = {
     datos: ['registro2'],
     perfil: ['registro2', 'registro3'],
@@ -1504,6 +1529,8 @@ body.booting .sroot{visibility:hidden}
     clearErrors();
     const radio = document.getElementById('s-' + screen);
     if (radio) radio.checked = true;
+    // Personnel : plein écran sur ordinateur (sans cadre de téléphone)
+    document.body.classList.toggle('is-staff', STAFF.includes(screen));
     $$(`.scr.v-${screen} .app-body, .scr.v-${screen} .s-body`).forEach((el) => { el.scrollTop = 0; });
     onEnter(screen).catch((e) => console.error(e));
   }
@@ -1914,6 +1941,8 @@ body.booting .sroot{visibility:hidden}
     // Un bouton d'un écran masqué ne fait rien
     const scr = label.closest('.scr');
     if (scr && !scr.classList.contains('v-' + current())) return;
+    // Contexte transmis par le bouton (data-*) : conversation, médicament…
+    state.nav = { ...label.dataset };
     if (label.dataset.pid) {
       state.patientId = label.dataset.pid;
       state.alertId = label.dataset.alert || null;
@@ -1999,10 +2028,8 @@ body.booting .sroot{visibility:hidden}
 })();
 
 /* =============================================================================
-   OncoAlerta · Écrans du personnel reliés à Supabase
-   Panel, Pacientes, Expediente, Alertas, Registro de intervención, Reportes.
-   Les règles de la base ne renvoient que les patients de l'hôpital du
-   membre du personnel connecté.
+   OncoAlerta · Outils communs (patient et personnel)
+   Libellés, icônes, dates en espagnol, échappement du texte, indicateurs.
    ============================================================================= */
 (() => {
   'use strict';
@@ -2132,11 +2159,227 @@ body.booting .sroot{visibility:hidden}
     return shown.map((i) => `<span class="reg ${inZone(i, row[i.code]) ? 'z' : ''}">${esc(i.label)} ${row[i.code]}/10</span>`).join('');
   }
 
+  window.OncoUtil = {
+    LEVELS, LV, RISK_ORDER, KIND, LIST_SCREENS, ICON,
+    esc, norm, MES, MESES, DIAS, DIA3, pad, hhmm, dayStart, daysAgo, shortDate, isoDay,
+    rel, clockOrDay, longDate, diag, initials, telLink, barcode, face, empty, loadError, unwrap,
+    getIndicators, inZone, chips,
+  };
+})();
+
+/* =============================================================================
+   OncoAlerta · Messagerie patient ↔ personnel
+   Un fil par couple (patient, membre de l'équipe). Les règles de la base
+   limitent chacun à ses propres fils.
+   ============================================================================= */
+(() => {
+  'use strict';
+  const O = window.Onco;
+  const U = window.OncoUtil;
+  const { $, $$ } = O;
+  const sb = () => O.sb;
+  const { esc, hhmm, daysAgo, shortDate, DIA3, initials, unwrap, empty } = U;
+  const uid = () => O.state.user?.id;
+
+  const DISC = {
+    oncologia_medica: 'Oncología médica', enfermeria: 'Enfermería oncológica', psicooncologia: 'Psicooncología',
+    nutricion: 'Nutrición', fisioterapia: 'Fisioterapia', trabajo_social: 'Trabajo social', otra: 'Equipo de salud',
+  };
+  const CHAT_IC = '<svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12Z"></path></svg>';
+
+  const listeners = { read: [], new: [] };
+  const emit = (evt) => listeners[evt].forEach((fn) => { try { fn(); } catch (e) { console.error(e); } });
+
+  // Couleur d'avatar stable pour une personne
+  const avClass = (id) => `av-${(String(id).split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 5) + 1}`;
+
+  function dayWord(ts) {
+    const d = new Date(ts);
+    const n = daysAgo(d);
+    if (n === 0) return 'Hoy';
+    if (n === 1) return 'Ayer';
+    if (n < 7) return `${DIA3[d.getDay()]} ${d.getDate()}`;
+    return shortDate(d);
+  }
+
+  function setBadge(labels, n) {
+    labels.forEach((l) => {
+      l.querySelector(':scope > .dotbadge')?.remove();
+      if (n > 0) {
+        const b = document.createElement('span');
+        b.className = 'dotbadge';
+        b.textContent = n;
+        l.appendChild(b);
+      }
+    });
+  }
+
+  // ── Liste des fils (patient) ────────────────────────────────────────────────
+  async function renderThreads() {
+    const list = $('#msg-threads');
+    try {
+      const rows = unwrap(await sb().from('message_threads').select('*').eq('patient_id', uid()));
+      rows.sort((a, b) => (b.unread - a.unread)
+        || new Date(b.last_at || 0) - new Date(a.last_at || 0)
+        || String(a.staff_name).localeCompare(b.staff_name));
+      list.innerHTML = rows.length ? rows.map((t) => `<label class="thread go" for="s-chat" data-staff="${t.staff_id}"><span class="avatar sm ${avClass(t.staff_id)}" aria-hidden="true">${esc(initials(t.staff_name))}</span><div><b>${esc(t.staff_name)}</b><small>${DISC[t.staff_discipline] || 'Equipo de salud'}</small><span class="prev">${t.last_body ? esc((t.last_sender_id === uid() ? 'Tú: ' : '') + t.last_body) : 'Sin mensajes todavía'}</span></div><div class="meta">${t.last_at ? `<span>${dayWord(t.last_at)}</span>` : ''}${t.unread ? `<span class="dotbadge">${t.unread}</span>` : ''}</div></label>`).join('')
+        : empty(CHAT_IC, 'Aún no tienes equipo asignado', 'Cuando tu hospital registre a tu equipo de salud en OncoAlerta, podrás escribirles desde aquí.');
+    } catch (e) {
+      console.error(e);
+      U.loadError(list);
+    }
+  }
+
+  // ── Conversation (patient : écran « chat », personnel : « staff-chat ») ────
+  const chat = { patient: null, staff: null, sig: '' };
+
+  async function renderChat() {
+    const staffSide = O.current() === 'staff-chat';
+    if (staffSide) {
+      chat.patient = O.state.patientId;
+      chat.staff = uid();
+    } else {
+      if (O.state.nav?.staff) chat.staff = O.state.nav.staff;
+      chat.patient = uid();
+    }
+    const scr = $(`.scr.v-${staffSide ? 'staff-chat' : 'chat'}`);
+    if (!chat.patient || !chat.staff) { O.go(staffSide ? 'staff-panel' : 'mensajes'); return; }
+    const list = $('.chat', scr);
+    try {
+      const [who, msgs] = await Promise.all([
+        staffSide
+          ? sb().from('staff_patient_overview').select('full_name, cancer_type').eq('patient_id', chat.patient).maybeSingle().then(unwrap)
+          : sb().from('staff').select('display_name, discipline').eq('id', chat.staff).maybeSingle().then(unwrap),
+        sb().from('messages').select('id, sender_id, body, created_at, intervention_id')
+          .eq('patient_id', chat.patient).eq('staff_id', chat.staff)
+          .order('created_at', { ascending: true }).limit(300).then(unwrap),
+      ]);
+      const name = staffSide ? who?.full_name : who?.display_name;
+      $('.chat-who b', scr).textContent = name || '—';
+      $('.chat-who small', scr).textContent = staffSide ? (who?.cancer_type || 'Paciente') : (DISC[who?.discipline] || 'Equipo de salud');
+      const av = $('.chat-av', scr);
+      av.className = `avatar sm chat-av ${avClass(staffSide ? chat.patient : chat.staff)}`;
+      av.textContent = initials(name);
+
+      // Ne rien redessiner si rien n'a changé (garde la position de lecture)
+      const sig = `${chat.patient}|${chat.staff}|${msgs.length}|${msgs.at(-1)?.id || ''}`;
+      const changed = sig !== chat.sig;
+      chat.sig = sig;
+      let lastDay = '';
+      if (changed) list.innerHTML = msgs.length ? msgs.map((m) => {
+        const day = dayWord(m.created_at);
+        const sep = day !== lastDay ? `<div class="daysep">${day}</div>` : '';
+        lastDay = day;
+        return `${sep}<div class="bub ${m.sender_id === uid() ? 'me' : 'them'}">${esc(m.body).replace(/\n/g, '<br>')}<time>${hhmm(new Date(m.created_at))}</time></div>`;
+      }).join('') : `<div class="bub sys">${staffSide
+        ? 'Aún no hay mensajes con este paciente. Lo que escribas le llegará en su app.'
+        : 'Aún no hay mensajes. Escribe a tu equipo; para una urgencia usa «Necesito ayuda».'}</div>`;
+      if (changed) {
+        const body = scr.querySelector('.app-body, .s-body');
+        body.scrollTop = body.scrollHeight;
+      }
+
+      // Marquer comme lus les messages reçus
+      if (changed && msgs.some((m) => m.sender_id !== uid())) {
+        await sb().from('messages').update({ read_at: new Date().toISOString() })
+          .eq('patient_id', chat.patient).eq('staff_id', chat.staff)
+          .neq('sender_id', uid()).is('read_at', null);
+        emit('read');
+      }
+    } catch (e) {
+      console.error(e);
+      list.innerHTML = '<p class="muted small" role="alert">No se pudieron cargar los mensajes. Revisa tu conexión.</p>';
+    }
+  }
+
+  O.action('enviar-mensaje', async (btn) => {
+    const scr = btn.closest('.scr');
+    const ta = $('textarea', scr);
+    const body = ta.value.trim();
+    if (!body) { ta.focus(); return; }
+    const { error } = await sb().from('messages').insert({ patient_id: chat.patient, staff_id: chat.staff, body });
+    if (error) {
+      console.error(error);
+      O.showError('No se pudo enviar el mensaje', ['Revisa tu conexión e inténtalo de nuevo.']);
+      return;
+    }
+    ta.value = '';
+    await renderChat();
+  });
+
+  // Ctrl/Cmd + Entrée pour envoyer depuis un ordinateur
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && e.target.closest?.('.composer')) {
+      e.preventDefault();
+      e.target.closest('.composer').querySelector('label[data-action="enviar-mensaje"]').click();
+    }
+  });
+
+  O.onScreen('mensajes', renderThreads);
+  O.onScreen('chat', renderChat);
+  O.onScreen('staff-chat', renderChat);
+
+  // Nouveaux messages : temps réel + vérification toutes les 10 s sur une conversation
+  let chanUser = null;
+  let pending = null;
+  function refresh() {
+    clearTimeout(pending);
+    pending = setTimeout(() => {
+      const s = O.current();
+      if (s === 'chat' || s === 'staff-chat') renderChat();
+      else if (s === 'mensajes') renderThreads();
+      emit('new');
+    }, 500);
+  }
+  function subscribe() {
+    const id = uid();
+    if (!sb() || !id || chanUser === id) return;
+    chanUser = id;
+    sb().channel(`mensajes-${id}`)
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, refresh)
+      .subscribe();
+  }
+  setInterval(() => {
+    if (!O.state.user) { chanUser = null; return; }
+    subscribe();
+    const s = O.current();
+    if ((s === 'chat' || s === 'staff-chat') && !document.hidden) renderChat();
+  }, 10000);
+
+  window.OncoChat = { setBadge, subscribe, avClass, dayWord, DISC, on: (evt, fn) => listeners[evt].push(fn) };
+})();
+
+/* =============================================================================
+   OncoAlerta · Écrans du personnel reliés à Supabase
+   Panel, Pacientes, Expediente, Alertas, Registro de intervención, Reportes.
+   Les règles de la base ne renvoient que les patients de l'hôpital du
+   membre du personnel connecté.
+   ============================================================================= */
+(() => {
+  'use strict';
+  const O = window.Onco;
+  const { $, $$ } = O;
+  const sb = () => O.sb;
+
+  const U = window.OncoUtil;
+  const {
+    LEVELS, LV, RISK_ORDER, KIND, LIST_SCREENS, ICON, esc, norm, MES, MESES, DIAS, DIA3, pad, hhmm, dayStart, daysAgo, shortDate, isoDay, rel, clockOrDay, longDate, diag, initials, telLink, barcode, face, empty, loadError, unwrap, inZone, chips,
+  } = U;
+  let indicators = null;
+  const getIndicators = async () => { indicators = await U.getIndicators(); return indicators; };
+
   // ── Données communes ────────────────────────────────────────────────────────
   async function loadOverview() {
     const rows = unwrap(await sb().from('staff_patient_overview').select('*'));
     return rows.sort((a, b) => RISK_ORDER[a.current_risk] - RISK_ORDER[b.current_risk]
       || new Date(b.last_report_at || 0) - new Date(a.last_report_at || 0));
+  }
+
+  let unreadBy = {};
+  async function loadUnread() {
+    const rows = unwrap(await sb().from('message_threads').select('patient_id, unread').eq('staff_id', O.state.user.id));
+    unreadBy = Object.fromEntries(rows.map((r) => [r.patient_id, r.unread]));
+    return unreadBy;
   }
 
   function setAlertBadge(n) {
@@ -2157,13 +2400,15 @@ body.booting .sroot{visibility:hidden}
     const lvl = LV[r.current_risk];
     const help = r.open_alert_source === 'boton_ayuda' ? '<span class="reg z">Necesito ayuda</span>' : '';
     const reg = r.last_checkin_id ? chips(r, { pad: 2 }) : '<span class="reg">Sin registros aún</span>';
+    const n = unreadBy[r.patient_id] || 0;
+    const msg = n ? `<span class="reg msg">${n} ${n === 1 ? 'mensaje nuevo' : 'mensajes nuevos'}</span>` : '';
     const search = norm(`${r.full_name} ${r.cancer_type || ''} ${r.record_number || ''}`);
     return `<article class="pcard ${r.current_risk === 'critico' ? 'crit-card' : ''}" data-name="${esc(search)}" data-lv="${r.current_risk}">
     <div class="band">${barcode(r.record_number)}<span class="exp">Exp. ${esc(r.record_number || '—')}</span><span class="lvl ${r.current_risk}">${lvl.short}</span></div>
     <div class="pcard-body">
       <div class="pcard-name"><h3>${esc(r.full_name || 'Paciente')}</h3><span class="sub nowrap">${r.age ? `${r.age} años` : ''}</span></div>
       <p class="sub">${esc(diag(r))}</p>
-      <div class="lastreg">${help}${reg}</div>
+      <div class="lastreg">${help}${msg}${reg}</div>
       <p class="when">${ICON.clock} ${r.last_report_at ? `Último reporte ${rel(r.last_report_at)}` : 'Sin reportes aún'}</p>
     </div>
     <div class="pcard-act"><label class="btn sm go" for="s-staff-expediente" data-pid="${r.patient_id}">Ver detalles</label>${telLink(r.phone, 'btn ghost sm')}</div>
@@ -2179,7 +2424,7 @@ body.booting .sroot{visibility:hidden}
     try {
       await getIndicators();
       const [rows, open] = await Promise.all([
-        loadOverview(),
+        loadOverview().then(async (r) => { await loadUnread(); return r; }),
         sb().from('alerts').select('id, patient_id, priority, status, reason, created_at')
           .neq('status', 'atendida').order('created_at', { ascending: false }).then(unwrap),
       ]);
@@ -2192,6 +2437,7 @@ body.booting .sroot{visibility:hidden}
 
       const count = Object.fromEntries(LEVELS.map((l) => [l.lv, rows.filter((r) => r.current_risk === l.lv).length]));
       $('#sp-total').textContent = rows.length;
+      $('#sp-total-word').textContent = rows.length === 1 ? 'paciente' : 'pacientes';
       $('#sp-alerts').textContent = `${open.length} ${open.length === 1 ? 'alerta activa' : 'alertas activas'}`;
       $('#sp-bar').innerHTML = LEVELS.filter((l) => count[l.lv])
         .map((l) => `<label class="bg-${l.lv} inert" style="flex:${count[l.lv]}" aria-label="${l.name}: ${count[l.lv]}"></label>`).join('');
@@ -2213,7 +2459,7 @@ body.booting .sroot{visibility:hidden}
     const list = $('#staff-pacientes-pList');
     try {
       await getIndicators();
-      const rows = await loadOverview();
+      const [rows] = await Promise.all([loadOverview(), loadUnread()]);
       $('#spp-sub').textContent = rows.length
         ? `${rows.length} ${rows.length === 1 ? 'paciente' : 'pacientes'} · ordenados por nivel de riesgo y último reporte.`
         : 'Ordenados por nivel de riesgo y último reporte.';
@@ -2451,6 +2697,10 @@ body.booting .sroot{visibility:hidden}
       const digits = String(p.profiles?.phone || '').replace(/[^\d+]/g, '');
       call.hidden = !digits;
       if (digits) call.href = `tel:${digits}`;
+      const msgBtn = $('#se-msg');
+      msgBtn.dataset.pid = pid;
+      await loadUnread();
+      window.OncoChat.setBadge([msgBtn], unreadBy[pid] || 0);
       const iv = $('#se-iv');
       iv.dataset.pid = pid;
       if (openAlert) iv.dataset.alert = openAlert.id; else delete iv.dataset.alert;
@@ -2687,6 +2937,9 @@ body.booting .sroot{visibility:hidden}
   }
 
   // Temps réel (nouvelles alertes, nouveaux registros) + filet de sécurité toutes les minutes
+  window.OncoChat.on('new', () => { if (O.state.role === 'staff') refreshSoon(); });
+  window.OncoChat.on('read', () => { if (O.state.role === 'staff') loadUnread().catch(() => {}); });
+
   let channelUser = null;
   function subscribe() {
     const uid = O.state.user?.id;
@@ -2702,7 +2955,607 @@ body.booting .sroot{visibility:hidden}
     refreshSoon();
   }, 60000);
   const firstPanel = renderPanel;
-  O.onScreen('staff-panel', async () => { subscribe(); await firstPanel(); });
+  O.onScreen('staff-panel', async () => { subscribe(); window.OncoChat.subscribe(); await firstPanel(); });
+})();
+
+/* =============================================================================
+   OncoAlerta · Écrans du patient reliés à Supabase
+   Accueil, ¿Cómo me siento hoy?, Seguimiento semanal, Necesito ayuda,
+   Mi diario (+ notes vocales), Historial, Mis medicamentos.
+   ============================================================================= */
+(() => {
+  'use strict';
+  const O = window.Onco;
+  const U = window.OncoUtil;
+  const C = window.OncoChat;
+  const { $, $$ } = O;
+  const sb = () => O.sb;
+  const { esc, hhmm, shortDate, dayStart, daysAgo, isoDay, DIA3, ICON, unwrap, inZone } = U;
+  const uid = () => O.state.user?.id;
+  const isPatient = () => O.state.role === 'patient' && O.state.step === 'completo';
+
+  const IC = {
+    check: '<svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>',
+    checkXs: '<svg class="ic xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>',
+    clock: '<svg class="ic sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
+    clockXs: '<svg class="ic xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
+    stop: '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"></rect></svg>',
+    book: '<svg class="ic lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"></path><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"></path></svg>',
+    logo: '<svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 41C10.5 31.5 5 24.5 5 16.8 5 10.8 9.6 6 15.3 6c3.8 0 6.7 2 8.7 5 2-3 4.9-5 8.7-5C38.4 6 43 10.8 43 16.8 43 24.5 37.5 31.5 24 41Z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"></path><path d="M9.5 22.5h7.2l3-6.8 4.8 13 3.2-8.2h10.8" fill="none" stroke="#F08A7E" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+    chart: '<svg class="illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-5 4 3 5-7"></path></svg>',
+  };
+  const EMOTIONS = ['Feliz', 'Tranquilo/a', 'Triste', 'Con miedo', 'Enojado/a', 'Con asco'];
+  const HOY_KEYS = ['eating', 'sleep', 'energy', 'pain', 'anxiety', 'sadness'];
+  const TZ_KEYS = ['anxiety', 'sadness', 'sleep', 'eating', 'pain', 'energy', 'support'];
+
+  const scaleValue = (name) => {
+    const c = $(`input[name="${name}"]:checked`);
+    return c ? Number(c.id.split('-').pop()) : null;
+  };
+  const question = (name) => $(`input[name="${name}"]`).closest('.nr').querySelector('.lbl').textContent.trim();
+  const clearInputs = (scr) => $$(`.scr.v-${scr} input[type=radio], .scr.v-${scr} input.ci`).forEach((i) => { i.checked = false; });
+
+  function dayTime(ts) {
+    const d = new Date(ts);
+    return `${C.dayWord(ts)} · ${hhmm(d)}`;
+  }
+
+  // ── Accueil : tamizaje dû, alerte en cours, messages non lus ────────────────
+  let home = null;
+  async function loadHome() {
+    home = unwrap(await sb().from('patient_home').select('*').maybeSingle());
+    return home;
+  }
+
+  function showUnread(n) {
+    C.setBadge($$('footer.tabbar label[for="s-mensajes"]'), n);
+    const end = $('#home-msg-end');
+    if (end) {
+      end.querySelector('.dotbadge')?.remove();
+      if (n > 0) end.insertAdjacentHTML('afterbegin', `<span class="dotbadge">${n}</span>`);
+    }
+  }
+
+  async function refreshBadges() {
+    try { await loadHome(); if (home) showUnread(home.unread_messages); } catch (e) { console.error(e); }
+  }
+  C.on('read', () => { if (O.state.role === 'patient') refreshBadges(); });
+  C.on('new', () => { if (O.state.role === 'patient') refreshBadges(); });
+
+  async function renderHome() {
+    C.subscribe();
+    subscribeAlerts();
+    try {
+      await loadHome();
+      if (!home) return;
+      $('#home-weekly').hidden = !home.weekly_due;
+      $('#home-today-sub').textContent = home.daily_done_today
+        ? 'Ya hiciste tu registro de hoy. Si algo cambió, puedes registrarlo otra vez.'
+        : 'Elige una carita para empezar tu registro de hoy.';
+      const chevron = $('#home-weekly svg:last-of-type')?.outerHTML || '';
+      $('#home-help').innerHTML = home.open_help_alert_id
+        ? `<label class="notice alert go" for="s-ayuda-sent">${ICON.bell}<span><b>Tu alerta está activa</b><span>Toca para ver si tu equipo ya la está atendiendo</span></span>${chevron}</label>`
+        : '';
+      showUnread(home.unread_messages);
+      checkReminders();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  // ── ¿Cómo me siento hoy? ────────────────────────────────────────────────────
+  O.onScreen('hoy', () => clearInputs('hoy'));
+
+  // Une carita de l'accueil présélectionne la même sur l'écran du registro
+  document.addEventListener('click', (e) => {
+    const f = e.target.closest('.v-home .faces .facebtn');
+    if (!f) return;
+    const i = $$('.v-home .faces .facebtn').indexOf(f);
+    const r = document.getElementById(`hoy-f0-${i}`);
+    if (r) r.checked = true;
+  }, true);
+
+  function resultNote(boxId, row) {
+    const n = row?.zone_codes?.length || 0;
+    $(boxId).innerHTML = n >= 2
+      ? `<div class="callout crit" style="margin-top:16px;text-align:left"><b>Algunas de tus respuestas necesitan atención</b><span>Avisamos a tu equipo de salud para que se comunique contigo. Si te sientes en peligro, usa «Necesito ayuda» o llama al 911.</span><label class="btn ghost sm go" for="s-recom">Ver recomendaciones</label></div>`
+      : n === 1
+        ? '<div class="callout" style="margin-top:16px;text-align:left"><span>Una de tus respuestas merece seguimiento. Tu equipo la verá en tu expediente.</span></div>'
+        : '';
+  }
+
+  O.action('guardar-hoy', async () => {
+    const f = $('input[name="hoy-f0"]:checked');
+    const values = { kind: 'diario', mood: f ? Number(f.id.split('-').pop()) + 1 : null };
+    const missing = values.mood ? [] : ['¿Cómo te sientes? Elige una carita'];
+    HOY_KEYS.forEach((k, i) => {
+      const v = scaleValue(`hoy-r${i}`);
+      if (v == null) missing.push(question(`hoy-r${i}`)); else values[k] = v;
+    });
+    if (missing.length) return O.showError('Responde todas las preguntas', missing);
+    const { data, error } = await sb().from('checkins').insert(values).select('zone_codes, risk_level').single();
+    if (error) {
+      console.error(error);
+      return O.showError('No pudimos guardar tu registro', ['Revisa tu conexión e inténtalo de nuevo.']);
+    }
+    resultNote('#hoyok-extra', data);
+    O.go('hoy-ok');
+  });
+
+  // ── Seguimiento semanal ─────────────────────────────────────────────────────
+  O.onScreen('tamizaje', () => clearInputs('tamizaje'));
+
+  O.action('enviar-tamizaje', async () => {
+    const values = { kind: 'semanal' };
+    const missing = [];
+    TZ_KEYS.forEach((k, i) => {
+      const v = scaleValue(`tamizaje-r${i}`);
+      if (v == null) missing.push(question(`tamizaje-r${i}`)); else values[k] = v;
+    });
+    if (missing.length) return O.showError('Responde todas las preguntas', missing);
+    const { data, error } = await sb().from('checkins').insert(values).select('zone_codes, risk_level').single();
+    if (error) {
+      console.error(error);
+      return O.showError('No pudimos enviar tu tamizaje', ['Revisa tu conexión e inténtalo de nuevo.']);
+    }
+    resultNote('#tzok-extra', data);
+    O.go('tamizaje-ok');
+  });
+
+  // ── Necesito ayuda ──────────────────────────────────────────────────────────
+  let helpAlertId = null;
+
+  O.onScreen('ayuda', async () => {
+    const box = $('#ay-open');
+    try {
+      await loadHome();
+      box.innerHTML = home?.open_help_alert_id
+        ? `<label class="notice alert go" for="s-ayuda-sent" style="width:100%;text-align:left">${ICON.bell}<span><b>Ya enviaste una alerta</b><span>Toca para ver si tu equipo ya la está atendiendo</span></span></label>`
+        : '';
+    } catch (e) { console.error(e); }
+  });
+
+  O.onScreen('ayuda-confirm', () => {
+    clearInputs('ayuda-confirm');
+    $('#ayuda-confirm-otroWrap').hidden = true;
+    $('#ayuda-confirm-otroTxt').value = '';
+  });
+
+  document.addEventListener('change', (e) => {
+    if (e.target.name === 'ayuda-confirm-c0') {
+      $('#ayuda-confirm-otroWrap').hidden = e.target.id !== 'ayuda-confirm-c0-4';
+    }
+  });
+
+  O.action('enviar-ayuda', async () => {
+    const chosen = $('input[name="ayuda-confirm-c0"]:checked');
+    const reason = chosen ? $(`label[for="${chosen.id}"]`).textContent.trim() : null;
+    const note = reason === 'Otro' ? ($('#ayuda-confirm-otroTxt').value.trim() || null) : null;
+    const { data, error } = await sb().rpc('request_help', { p_reason: reason, p_note: note });
+    if (error) {
+      console.error(error);
+      return O.showError('No pudimos enviar la alerta', ['Revisa tu conexión e inténtalo otra vez.', 'Si es una emergencia, llama al 911.']);
+    }
+    helpAlertId = data.id;
+    O.go('ayuda-sent');
+  });
+
+  async function renderHelpStatus() {
+    try {
+      if (!helpAlertId) {
+        await loadHome();
+        helpAlertId = home?.open_help_alert_id || null;
+      }
+      if (!helpAlertId) {
+        const last = unwrap(await sb().from('alerts').select('id').eq('source', 'boton_ayuda')
+          .order('created_at', { ascending: false }).limit(1).maybeSingle());
+        helpAlertId = last?.id || null;
+      }
+      if (!helpAlertId) { O.go('ayuda'); return; }
+      const a = unwrap(await sb().from('alerts')
+        .select('id, status, reason, created_at, taken_at, resolved_at, taker:staff!alerts_taken_by_fkey(display_name), resolver:staff!alerts_resolved_by_fkey(display_name)')
+        .eq('id', helpAlertId).maybeSingle());
+      if (!a) { O.go('ayuda'); return; }
+      const step = (cls, icon, title, small) => `<li class="${cls}"><span class="dot">${icon}</span><div><b>${esc(title)}</b><small>${esc(small)}</small></div></li>`;
+      const steps = [
+        step('done', IC.checkXs, 'Alerta enviada', `${a.reason} · ${hhmm(new Date(a.created_at))}`),
+        step('done', IC.checkXs, 'Tu equipo de salud fue notificado', 'Personal de enfermería de turno y tu médico tratante'),
+      ];
+      if (a.status === 'activa') {
+        steps.push(step('now', IC.clockXs, 'Esperando respuesta', 'Mantén tu teléfono cerca.'));
+      } else if (a.status === 'en_atencion') {
+        steps.push(step('done', IC.checkXs, `${a.taker?.display_name || 'Tu equipo'} está atendiendo tu alerta`, `Desde las ${hhmm(new Date(a.taken_at || Date.now()))}`));
+        steps.push(step('now', IC.clockXs, 'Te contactarán en breve', 'Mantén tu teléfono cerca.'));
+      } else {
+        steps.push(step('done', IC.checkXs, 'Tu equipo atendió tu alerta', `${a.resolver?.display_name || 'Tu equipo de salud'} · ${hhmm(new Date(a.resolved_at || Date.now()))}`));
+        steps.push(step('done', IC.checkXs, 'Revisa tus mensajes', 'Si te enviaron recomendaciones, están en Mensajes.'));
+      }
+      $('#as-steps').innerHTML = steps.join('');
+      $('.v-ayuda-sent .app-head h1').textContent = a.status === 'atendida' ? 'Alerta atendida' : 'Alerta enviada';
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  O.onScreen('ayuda-sent', renderHelpStatus);
+
+  // Changement de statut de l'alerte : temps réel + vérification toutes les 15 s
+  let alertChanUser = null;
+  function subscribeAlerts() {
+    const id = uid();
+    if (!sb() || !id || alertChanUser === id) return;
+    alertChanUser = id;
+    sb().channel(`ayuda-${id}`)
+      .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'alerts' }, () => {
+        if (O.current() === 'ayuda-sent') renderHelpStatus();
+        if (O.current() === 'home') renderHome();
+      })
+      .subscribe();
+  }
+  setInterval(() => {
+    if (O.state.role === 'patient' && O.current() === 'ayuda-sent' && !document.hidden) renderHelpStatus();
+  }, 15000);
+
+  // ── Mi diario ───────────────────────────────────────────────────────────────
+  const voice = { recorder: null, chunks: [], blob: null, url: null, started: 0, timer: null, stream: null };
+  const canRecord = () => Boolean(navigator.mediaDevices?.getUserMedia && window.MediaRecorder);
+  const MAX_AUDIO = 10 * 1024 * 1024;
+  const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/ogg': 'ogg', 'audio/mpeg': 'mp3', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/wav': 'wav' };
+
+  function voiceView(state) {
+    const txt = $('#diario-voiceTxt');
+    const rec = $('.v-diario .rec');
+    rec.classList.toggle('on', state === 'recording');
+    if (state === 'recording') {
+      const s = Math.floor((Date.now() - voice.started) / 1000);
+      txt.textContent = `Grabando… ${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')} · toca para detener`;
+    } else if (state === 'ready') {
+      txt.innerHTML = `<audio controls src="${voice.url}"></audio><button type="button" class="linkbtn" id="diario-voiceDel">Quitar nota de voz</button>`;
+    } else {
+      txt.innerHTML = canRecord()
+        ? 'Toca el micrófono para grabar o <label class="linkbtn" for="diario-voiceFile">elige un audio</label>.'
+        : 'Toca el micrófono para grabar o elegir una nota de voz.';
+    }
+  }
+
+  function setVoiceBlob(blob) {
+    if (voice.url) URL.revokeObjectURL(voice.url);
+    voice.blob = blob;
+    voice.url = blob ? URL.createObjectURL(blob) : null;
+    voiceView(blob ? 'ready' : 'idle');
+  }
+
+  async function startRecording() {
+    try {
+      voice.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch (e) {
+      console.error(e);
+      O.showError('No pudimos usar el micrófono', ['Permite el acceso al micrófono en tu navegador o elige un archivo de audio.']);
+      return;
+    }
+    voice.chunks = [];
+    voice.recorder = new MediaRecorder(voice.stream);
+    voice.recorder.ondataavailable = (ev) => { if (ev.data.size) voice.chunks.push(ev.data); };
+    voice.recorder.onstop = () => {
+      voice.stream.getTracks().forEach((t) => t.stop());
+      clearInterval(voice.timer);
+      setVoiceBlob(new Blob(voice.chunks, { type: voice.recorder.mimeType || 'audio/webm' }));
+    };
+    voice.started = Date.now();
+    voice.recorder.start();
+    voiceView('recording');
+    voice.timer = setInterval(() => {
+      if (Date.now() - voice.started > 5 * 60000) voice.recorder.stop(); // 5 minutes maximum
+      else voiceView('recording');
+    }, 1000);
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#diario-voiceDel')) { setVoiceBlob(null); return; }
+    const rec = e.target.closest('.v-diario .rec');
+    if (!rec || !canRecord()) return; // sans enregistreur : le bouton ouvre le choix de fichier
+    e.preventDefault();
+    if (voice.recorder?.state === 'recording') voice.recorder.stop();
+    else startRecording();
+  });
+
+  document.addEventListener('change', (e) => {
+    if (e.target.id !== 'diario-voiceFile') return;
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    if (!file.type.startsWith('audio/')) return O.showError('Elige un archivo de audio', ['El archivo elegido no es una nota de voz.']);
+    if (file.size > MAX_AUDIO) return O.showError('La nota de voz es muy larga', ['El tamaño máximo es de 10 MB.']);
+    setVoiceBlob(file);
+  });
+
+  async function renderDiary() {
+    clearInputs('diario');
+    $('#diario-dText').value = '';
+    $('#diario-dShare').checked = true;
+    if (voice.recorder?.state === 'recording') voice.recorder.stop();
+    setVoiceBlob(null);
+    const list = $('#diario-entries');
+    try {
+      const rows = unwrap(await sb().from('diary_entries').select('*').order('created_at', { ascending: false }).limit(30));
+      if (!rows.length) {
+        list.innerHTML = U.empty(IC.book.replace('class="ic lg"', 'class="illu"'), 'Aún no tienes entradas', 'Lo que escribas o grabes en tu diario aparecerá aquí.');
+        return;
+      }
+      const faces = $$('.v-diario .emofaces svg.face');
+      const urls = await Promise.all(rows.map((r) => (r.audio_path
+        ? sb().storage.from('voice-notes').createSignedUrl(r.audio_path, 3600).then((x) => x.data?.signedUrl).catch(() => null)
+        : null)));
+      list.innerHTML = `<div class="entries">${rows.map((r, i) => {
+        const fi = EMOTIONS.indexOf(r.emotion);
+        return `<article class="entry">${fi >= 0 && faces[fi] ? faces[fi].outerHTML : IC.book}<div><time>${dayTime(r.created_at)}</time>${r.body ? `<p>${esc(r.body)}</p>` : ''}${urls[i] ? `<audio controls preload="none" src="${esc(urls[i])}" style="width:100%;margin-top:6px"></audio>` : ''}<div class="tags">${r.emotion ? `<span>${esc(r.emotion)}</span><span>·</span>` : ''}<span>${r.shared ? 'Compartida con tu equipo' : 'Solo para ti'}</span></div></div></article>`;
+      }).join('')}</div>`;
+    } catch (e) {
+      console.error(e);
+      U.loadError(list);
+    }
+  }
+  O.onScreen('diario', renderDiary);
+
+  O.action('guardar-diario', async () => {
+    if (voice.recorder?.state === 'recording') return O.showError('Detén la grabación', ['Toca el micrófono para terminar la nota de voz antes de guardar.']);
+    const f = $('input[name="diario-f0"]:checked');
+    const emotion = f ? EMOTIONS[Number(f.id.split('-').pop())] : null;
+    const body = $('#diario-dText').value.trim();
+    if (!emotion && !body && !voice.blob) {
+      return O.showError('Tu entrada está vacía', ['Elige una emoción, escribe algo o graba una nota de voz.']);
+    }
+    let audioPath = null;
+    if (voice.blob) {
+      const type = (voice.blob.type || 'audio/webm').split(';')[0];
+      const name = (window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+      audioPath = `${uid()}/${name}.${AUDIO_EXT[type] || 'webm'}`;
+      const { error } = await sb().storage.from('voice-notes').upload(audioPath, voice.blob, { contentType: AUDIO_EXT[type] ? type : 'audio/webm' });
+      if (error) {
+        console.error(error);
+        return O.showError('No pudimos subir tu nota de voz', ['Revisa tu conexión. Si el problema sigue, guarda la entrada sin audio.']);
+      }
+    }
+    const { error } = await sb().from('diary_entries').insert({
+      emotion, body: body || null, audio_path: audioPath, shared: $('#diario-dShare').checked,
+    });
+    if (error) {
+      console.error(error);
+      if (audioPath) sb().storage.from('voice-notes').remove([audioPath]).catch(() => {});
+      return O.showError('No pudimos guardar tu entrada', ['Revisa tu conexión e inténtalo de nuevo.']);
+    }
+    setVoiceBlob(null);
+    O.go('diario-ok');
+  });
+
+  // ── Historial ───────────────────────────────────────────────────────────────
+  const HI = [['anxiety', 'Ansiedad'], ['sadness', 'Tristeza'], ['sleep', 'Sueño'], ['energy', 'Energía'], ['eating', 'Alimentación'], ['pain', 'Dolor']];
+  let hiCode = 'anxiety';
+  let hiRows = [];
+  let hiWeeks = [];
+  let indicators = [];
+
+  function historyChart(code, label) {
+    const X0 = 28; const X1 = 328; const Y0 = 12; const Y1 = 154;
+    const step = (X1 - X0) / 13;
+    const y = (v) => Y1 - (v - 1) * ((Y1 - Y0) / 9);
+    const byDay = new Map();
+    hiRows.forEach((c) => {
+      const n = daysAgo(new Date(c.created_at));
+      if (n >= 0 && n <= 13 && c[code] != null && !byDay.has(n)) byDay.set(n, c[code]);
+    });
+    if (!byDay.size) return `<p class="muted small" style="margin-top:14px">Sin registros de ${label.toLowerCase()} en los últimos 14 días.</p>`;
+    const grid = [1, 4, 7, 10].map((v) => `<line x1="${X0}" x2="${X1}" y1="${y(v)}" y2="${y(v)}"></line><text text-anchor="end" x="20" y="${y(v) + 4}">${v}</text>`).join('');
+    const labels = [0, 3, 6, 9, 12].map((n) => {
+      const d = new Date(); d.setDate(d.getDate() - n);
+      return `<text text-anchor="middle" x="${X1 - n * step}" y="174">${n === 0 ? 'Hoy' : `${DIA3[d.getDay()]} ${d.getDate()}`}</text>`;
+    }).join('');
+    const days = [...byDay.keys()].sort((a, b) => b - a);
+    let path = '';
+    days.forEach((n, i) => { path += `${i && days[i - 1] === n + 1 ? 'L' : 'M'}${(X1 - n * step).toFixed(1)} ${y(byDay.get(n)).toFixed(1)}`; });
+    const pts = days.map((n, i) => `<circle class="pt" cx="${(X1 - n * step).toFixed(1)}" cy="${y(byDay.get(n)).toFixed(1)}" r="${i === days.length - 1 ? 5 : 3.2}" style="fill:var(--teal)"><title>${byDay.get(n)}/10</title></circle>`).join('');
+    return `<div style="margin-top:14px"><div class="chartbox"><svg class="chart" viewBox="0 0 340 180" role="img" aria-label="${esc(label)} en los últimos 14 días, escala del 1 al 10"><g class="grid">${grid}</g>${labels}<path class="ln" d="${path}" style="stroke:var(--teal)"></path>${pts}</svg></div></div>`;
+  }
+
+  function drawHistory() {
+    const [code, label] = HI.find(([c]) => c === hiCode);
+    $$('#hi-tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.code === code)));
+    $('#hi-chart').innerHTML = historyChart(code, label);
+    const monday = isoDay(mondayOf(new Date()));
+    const prevMonday = isoDay(new Date(mondayOf(new Date()).getTime() - 7 * 864e5));
+    const cur = hiWeeks.find((w) => w.week_start === monday)?.[code];
+    const prev = hiWeeks.find((w) => w.week_start === prevMonday)?.[code];
+    const ind = indicators.find((i) => i.code === code);
+    let trend = '';
+    if (cur != null && prev != null && Number(cur) !== Number(prev) && ind) {
+      const better = ind.alert_when === 'alto' ? Number(cur) < Number(prev) : Number(cur) > Number(prev);
+      trend = `<span class="trend ${better ? 'up' : 'down'}">${better ? 'Mejor' : 'Peor'} que la semana anterior</span>`;
+    }
+    const f = (v) => (v == null ? '—' : Number(v).toFixed(1));
+    $('#hi-sum').innerHTML = `<span>Promedio esta semana <b class="num">${f(cur)}</b></span><span>Semana anterior <b class="num">${f(prev)}</b></span>${trend}`;
+  }
+
+  function mondayOf(d) {
+    const m = dayStart(d);
+    m.setDate(m.getDate() - ((m.getDay() + 6) % 7));
+    return m;
+  }
+
+  async function renderHistory() {
+    try {
+      indicators = await U.getIndicators();
+      const since = new Date(Date.now() - 60 * 864e5).toISOString();
+      const [rows, weeks] = await Promise.all([
+        sb().from('checkins').select('*').gte('created_at', since).order('created_at', { ascending: false }).then(unwrap),
+        sb().from('patient_weekly_indicators').select('*').order('week_start', { ascending: false }).limit(6).then(unwrap),
+      ]);
+      hiRows = rows;
+      hiWeeks = weeks;
+      $('#hi-empty').hidden = rows.length > 0;
+      $('#hi-content').hidden = rows.length === 0;
+      if (!rows.length) return;
+      drawHistory();
+      const monday = isoDay(mondayOf(new Date()));
+      const f = (v) => (v == null ? '—' : Number(v).toFixed(1));
+      $('#hi-weeks').innerHTML = weeks.map((w) => `<tr><td>${w.week_start === monday ? 'Esta semana' : `Del ${shortDate(new Date(`${w.week_start}T12:00:00`))}`}</td><td class="n">${f(w.anxiety)}</td><td class="n">${f(w.sadness)}</td><td class="n">${f(w.sleep)}</td><td class="n">${f(w.energy)}</td></tr>`).join('');
+      const tz = rows.filter((r) => r.kind !== 'diario');
+      $('#hi-tz').innerHTML = tz.length
+        ? tz.map((r) => `<div class="entry">${U.ICON.clipboard}<div><time>${shortDate(new Date(r.created_at))} · ${hhmm(new Date(r.created_at))}</time><p>${r.kind === 'semanal' ? 'Tamizaje semanal' : 'Tamizaje inicial'} · enviado a tu equipo</p></div></div>`).join('')
+        : '<p class="muted small">Aún no has enviado tamizajes en los últimos 60 días.</p>';
+    } catch (e) {
+      console.error(e);
+      U.loadError($('#hi-chart'));
+    }
+  }
+  O.onScreen('historial', renderHistory);
+
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('#hi-tabs button');
+    if (!b) return;
+    hiCode = b.dataset.code;
+    drawHistory();
+  });
+
+  // ── Mis medicamentos ────────────────────────────────────────────────────────
+  let meds = [];
+  let pendingDelete = null;
+  const snoozed = {};
+  const freq = (h) => (h === 24 ? 'Una vez al día' : `Cada ${h} horas`);
+
+  async function loadMeds() {
+    meds = unwrap(await sb().from('medications').select('*, next_dose_at, doses_taken_today').eq('active', true).order('created_at'));
+    return meds;
+  }
+
+  function medCard(m) {
+    const next = m.next_dose_at ? new Date(m.next_dose_at) : null;
+    const mins = next ? Math.round((next - Date.now()) / 60000) : null;
+    const due = next && mins <= 60;
+    const n = daysAgo(next || new Date());
+    const when = n === 0 ? 'Hoy' : n === -1 ? 'Mañana' : next ? shortDate(next) : '';
+    let stateHtml;
+    if (due) stateHtml = `<div class="medstate pend">${IC.clock} ${mins <= 0 ? 'Toma pendiente' : `Próxima toma en ${mins} min`}</div>`;
+    else if (m.doses_taken_today > 0) stateHtml = `<div class="medstate ok">${IC.check} ${m.doses_taken_today} ${m.doses_taken_today === 1 ? 'toma registrada' : 'tomas registradas'} hoy</div>`;
+    else stateHtml = `<div class="medstate">${IC.clock} Próxima toma ${when.toLowerCase()} a las ${next ? hhmm(next) : '—'}</div>`;
+    const del = pendingDelete === m.id
+      ? `<label class="btn danger sm go" for="s-meds" data-action="eliminar-med" data-med="${m.id}">Confirmar eliminación</label>`
+      : `<label class="btn ghost sm go" for="s-meds" data-action="eliminar-med" data-med="${m.id}">Eliminar</label>`;
+    return `<article class="medcard"><div class="medcard-top"><div><h3>${esc(m.name)}</h3><p class="det">${esc(m.dose)} · ${esc(m.route)} · ${freq(m.every_hours)} · ${esc(m.duration)}</p></div><div class="medtime"><b>${next ? hhmm(next) : '—'}</b><small>${when}</small></div></div>
+          ${stateHtml}
+          <div class="btnrow">${due ? `<label class="btn sm go" for="s-meds" data-action="tomar" data-med="${m.id}">${IC.check} Ya lo tomé</label>` : ''}<label class="btn ghost sm go" for="s-medform" data-med="${m.id}">Editar</label>${del}</div></article>`;
+  }
+
+  function drawMeds() {
+    $('#meds-empty').hidden = meds.length > 0;
+    $('#meds-list').innerHTML = meds.length ? `<div class="entries">${meds.map(medCard).join('')}</div>` : '';
+  }
+
+  async function renderMeds() {
+    try {
+      await loadMeds();
+      drawMeds();
+      checkReminders(false);
+    } catch (e) {
+      console.error(e);
+      U.loadError($('#meds-list'));
+    }
+  }
+  O.onScreen('meds', renderMeds);
+
+  O.action('tomar', async (btn) => {
+    const { error } = await sb().from('medication_intakes').insert({ medication_id: btn.dataset.med });
+    if (error) {
+      console.error(error);
+      if (O.current() === 'meds') O.showError('No pudimos registrar la toma', ['Inténtalo de nuevo.']);
+      return;
+    }
+    hideNotif();
+    if (O.current() === 'meds') await renderMeds();
+  });
+
+  O.action('eliminar-med', async (btn) => {
+    const id = btn.dataset.med;
+    if (pendingDelete !== id) {
+      pendingDelete = id;
+      drawMeds();
+      setTimeout(() => { if (pendingDelete === id) { pendingDelete = null; if (O.current() === 'meds') drawMeds(); } }, 5000);
+      return;
+    }
+    pendingDelete = null;
+    const { error } = await sb().from('medications').delete().eq('id', id);
+    if (error) {
+      console.error(error);
+      return O.showError('No pudimos eliminar el medicamento', ['Inténtalo de nuevo.']);
+    }
+    await renderMeds();
+  });
+
+  let editingMed = null;
+  const MF = { name: '#medform-mfNom', dose: '#medform-mfDos', every_hours: '#medform-mfFreq', first_dose_time: '#medform-mfHora', route: '#medform-mfVia', duration: '#medform-mfDur' };
+
+  O.onScreen('medform', async () => {
+    editingMed = O.state.nav?.med || null;
+    Object.values(MF).forEach((sel) => { $(sel).value = ''; });
+    $('.v-medform .app-head h1').textContent = editingMed ? 'Editar medicamento' : 'Agregar medicamento';
+    if (!editingMed) return;
+    try {
+      const m = unwrap(await sb().from('medications').select('*').eq('id', editingMed).maybeSingle());
+      if (!m) return;
+      Object.entries(MF).forEach(([k, sel]) => { $(sel).value = k === 'first_dose_time' ? String(m[k]).slice(0, 5) : m[k]; });
+    } catch (e) { console.error(e); }
+  });
+
+  O.action('guardar-med', async () => {
+    const missing = O.missingFields($('#medform-mf'));
+    if (missing.length) return O.showError('Faltan datos', missing);
+    const row = Object.fromEntries(Object.entries(MF).map(([k, sel]) => [k, $(sel).value.trim()]));
+    row.every_hours = Number(row.every_hours);
+    const q = editingMed
+      ? sb().from('medications').update(row).eq('id', editingMed)
+      : sb().from('medications').insert(row);
+    const { error } = await q;
+    if (error) {
+      console.error(error);
+      return O.showError('No pudimos guardar el medicamento', ['Revisa los datos e inténtalo de nuevo.']);
+    }
+    O.go(editingMed ? 'meds' : 'meds-ok');
+  });
+
+  // Rappel « Es momento de tomar el medicamento » (pendant que l'app est ouverte)
+  function hideNotif() {
+    $('#med-notif')?.remove();
+  }
+
+  async function checkReminders(fetch = true) {
+    if (!isPatient()) { hideNotif(); return; }
+    try {
+      if (fetch) await loadMeds();
+      const now = Date.now();
+      const due = meds.find((m) => m.next_dose_at && new Date(m.next_dose_at) <= now && !(snoozed[m.id] > now));
+      if (!due) { hideNotif(); return; }
+      if ($('#med-notif')?.dataset.med === due.id) return;
+      hideNotif();
+      $('.app').insertAdjacentHTML('beforeend', `<div class="notif" role="alert" id="med-notif" data-med="${due.id}"><div class="notif-top">${IC.logo}<div><b>Es momento de tomar el medicamento</b><br><small>OncoAlerta · ${hhmm(new Date(due.next_dose_at))}</small></div><span></span></div>
+    <div class="notif-msg">${esc(due.name)} · ${esc(due.dose)} · ${esc(due.route)}</div>
+    <div class="btnrow"><label class="btn sm go" for="s-meds" data-action="tomar" data-med="${due.id}">${IC.check} Ya lo tomé</label><label class="btn ghost sm go" for="s-meds" data-action="posponer" data-med="${due.id}">En 10 minutos</label></div></div>`);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  O.action('posponer', async (btn) => {
+    snoozed[btn.dataset.med] = Date.now() + 10 * 60000;
+    hideNotif();
+  });
+
+  setInterval(() => {
+    if (!isPatient() || document.hidden) { if (!isPatient()) hideNotif(); return; }
+    checkReminders();
+    refreshBadges();
+  }, 60000);
+
+  O.onScreen('home', renderHome);
+  // Déconnexion : plus de rappel affiché
+  ['bienvenida', 'login'].forEach((s) => O.onScreen(s, hideNotif));
 })();
 </script>
 </body>
