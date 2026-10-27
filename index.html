@@ -1371,7 +1371,7 @@ body.booting .sroot{visibility:hidden}
           <div class="field" data-req="Tratamiento actual"><span class="lbl">Tratamiento actual <span class="optional">(elige todos los que recibes)</span></span><div class="chips" data-chips="trat" data-multi="1" role="group" aria-label="Tratamiento actual"><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-0"><label class="chip" for="registro3-c1-0">Quimioterapia</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-1"><label class="chip" for="registro3-c1-1">Radioterapia</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-2"><label class="chip" for="registro3-c1-2">Cirugía</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-3"><label class="chip" for="registro3-c1-3">Inmunoterapia</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-4"><label class="chip" for="registro3-c1-4">Hormonoterapia</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-5"><label class="chip" for="registro3-c1-5">Terapia dirigida</label><input type="checkbox" class="ci" name="registro3-c1" id="registro3-c1-6"><label class="chip" for="registro3-c1-6">Otro</label></div><span class="err">Elige al menos un tratamiento.</span></div>
           <div class="field"><label for="registro3-r3Det">Detalle del tratamiento <span class="optional">(opcional)</span></label><input class="input" id="registro3-r3Det" type="text" placeholder="Ej. ciclo 2 de 6"><span class="err">Este dato es obligatorio.</span></div>
           <div class="field" data-req="Fecha de diagnóstico"><label for="registro3-r3Fecha">Fecha de diagnóstico</label><input class="input" id="registro3-r3Fecha" type="date"><span class="err">Este dato es obligatorio.</span></div>
-          <div class="field" data-req="Médico tratante"><label for="registro3-r3Med">Médico tratante</label><input class="input" id="registro3-r3Med" type="text" placeholder="Nombre de tu médico"><span class="err">Este dato es obligatorio.</span></div>
+          <div class="field" data-req="Médico tratante"><label for="registro3-r3Med">Médico tratante</label><select class="select" id="registro3-r3Med"><option value="">Cargando médicos…</option></select><span class="help">Tu médico podrá ver tus registros y escribirte por Mensajes.</span><span class="err">Este dato es obligatorio.</span></div><div class="field" id="registro3-r3MedOtroBox" hidden><label for="registro3-r3MedOtro">Nombre de tu médico</label><input class="input" id="registro3-r3MedOtro" type="text" placeholder="Nombre de tu médico"><span class="help">Escríbelo como aparece en tus documentos médicos.</span><span class="err">Este dato es obligatorio.</span></div>
           <div class="field" data-req="Red de apoyo"><span class="lbl">Red de apoyo</span><div class="chips" data-chips="red" data-multi="1" role="group" aria-label="Red de apoyo"><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-0"><label class="chip" for="registro3-c2-0">Pareja</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-1"><label class="chip" for="registro3-c2-1">Hijos/as</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-2"><label class="chip" for="registro3-c2-2">Padres</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-3"><label class="chip" for="registro3-c2-3">Hermanos/as</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-4"><label class="chip" for="registro3-c2-4">Amistades</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-5"><label class="chip" for="registro3-c2-5">Grupo de apoyo</label><input type="checkbox" class="ci" name="registro3-c2" id="registro3-c2-6"><label class="chip" for="registro3-c2-6">Ninguna</label></div><span class="err">Elige al menos una opción.</span></div>
         </div>
       </div>
@@ -1544,6 +1544,7 @@ body.booting .sroot{visibility:hidden}
     if (/patients_curp_key/.test(msg)) return 'Esta CURP ya está registrada en otra cuenta.';
     if (/patients_record_unique/.test(msg)) return 'Este número de expediente ya está registrado en tu hospital.';
     if (/consentimiento/.test(msg)) return 'Necesitamos tu consentimiento para continuar.';
+    if (/no está disponible/.test(msg)) return 'Este médico ya no está disponible. Elige otro de la lista.';
     if (/fetch|network/i.test(msg)) return 'No se pudo conectar. Revisa tu conexión a internet.';
     console.error(error);
     return 'No pudimos guardar tus datos. Inténtalo de nuevo.';
@@ -1589,9 +1590,43 @@ body.booting .sroot{visibility:hidden}
     if (hello) hello.textContent = `Hola, ${name}`;
   }
 
+  // ── Étape 3 : liste des médecins de l'hôpital du patient ─────────────────────
+  const OTHER_DOCTOR = 'otro';
+
+  function toggleOtherDoctor() {
+    $('#registro3-r3MedOtroBox').hidden = $('#registro3-r3Med').value !== OTHER_DOCTOR;
+  }
+
+  async function loadDoctors() {
+    const select = $('#registro3-r3Med');
+    const previous = select.value;
+    // Les règles de la base ne renvoient au patient que le personnel de son hôpital
+    const [doctors, current] = await Promise.all([
+      sb.from('staff').select('id, display_name')
+        .eq('discipline', 'oncologia_medica').eq('active', true).order('display_name'),
+      sb.from('care_team').select('staff_id')
+        .eq('patient_id', state.user.id).eq('is_treating_doctor', true).maybeSingle(),
+    ]);
+    if (doctors.error) {
+      select.options[0].textContent = 'No se pudo cargar la lista. Recarga la página.';
+      return;
+    }
+    select.innerHTML = '';
+    select.add(new Option(doctors.data.length
+      ? 'Selecciona a tu médico'
+      : 'Aún no hay médicos registrados en tu hospital', ''));
+    doctors.data.forEach((d) => select.add(new Option(d.display_name, d.id)));
+    select.add(new Option('Mi médico no aparece en la lista', OTHER_DOCTOR));
+
+    const wanted = previous || current.data?.staff_id || '';
+    if ([...select.options].some((o) => o.value === wanted)) select.value = wanted;
+    toggleOtherDoctor();
+  }
+
   // ── Contenu chargé à l'arrivée sur un écran ─────────────────────────────────
   let unitsLoaded = false;
   async function onEnter(screen) {
+    if (screen === 'registro3') await loadDoctors();
     if (screen === 'home') {
       const first = (state.fullName || '').trim().split(/\s+/)[0];
       $('.v-home .p-hello h1').textContent = first ? `Hola, ${first}` : 'Hola';
@@ -1741,16 +1776,29 @@ body.booting .sroot{visibility:hidden}
     if (date > new Date().toISOString().slice(0, 10)) {
       return showError('Revisa la fecha', ['La fecha de diagnóstico no puede estar en el futuro.'], [fieldOf('registro3-r3Fecha')]);
     }
+    const doctorSelect = $('#registro3-r3Med');
+    const doctorId = doctorSelect.value === OTHER_DOCTOR ? null : doctorSelect.value;
+    const otherName = $('#registro3-r3MedOtro').value.trim();
+    if (!doctorId && !otherName) {
+      return showError('Faltan datos', ['Nombre de tu médico'], [$('#registro3-r3MedOtroBox')]);
+    }
     const { error } = await sb.from('patients').update({
       cancer_type: $('#registro3-r3Tipo').value,
       cancer_stage: chipValues(scr, 'etapa')[0],
       treatments: chipValues(scr, 'trat'),
       treatment_detail: $('#registro3-r3Det').value.trim() || null,
       diagnosis_date: date,
-      treating_doctor_name: $('#registro3-r3Med').value.trim(),
+      treating_doctor_name: doctorId ? doctorSelect.selectedOptions[0].text : otherName,
       support_network: chipValues(scr, 'red'),
     }).eq('id', state.user.id);
     if (error) return showError('No pudimos guardar tu perfil', [dbMessage(error)]);
+
+    // Lien avec le compte du médecin (ou retrait du lien si « no aparece »)
+    const { error: e2 } = await sb.rpc('set_treating_doctor', { p_staff_id: doctorId });
+    if (e2) {
+      await loadDoctors();
+      return showError('No pudimos guardar tu médico', [dbMessage(e2)], [fieldOf('registro3-r3Med')]);
+    }
     await loadState();
     go(homeScreen());
   }
@@ -1839,6 +1887,10 @@ body.booting .sroot{visibility:hidden}
     if (e.target.classList && e.target.classList.contains('nav-r') && !allowedScreens().includes(current())) {
       go(homeScreen());
     }
+  });
+
+  document.addEventListener('change', (e) => {
+    if (e.target.id === 'registro3-r3Med') toggleOtherDoctor();
   });
 
   document.addEventListener('input', (e) => {
